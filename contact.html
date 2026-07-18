@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — OUS Academy</title>
+<meta name="description" content="Talk to an advisor, ask about institutional partnerships, or start your placement — OUS Academy is one message away.">
+<link rel="icon" href="assets/img/badge.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact">
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="index.html" class="brand" aria-label="OUS Academy — home">
+      <img src="assets/img/badge.svg" alt="" class="brand-mark">
+      <span class="brand-word-text" data-i18n="brand.name">OUS <em>Academy</em></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" data-page="home" data-i18n="nav.home">Home</a>
+      <a href="courses.html" data-page="courses" data-i18n="nav.courses">Courses</a>
+      <a href="about.html" data-page="about" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a>
+      <a href="courses.html" class="btn btn-on-dark nav-cta-mobile" data-i18n="nav.cta">Start Learning</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="is-active">EN</button>
+        <button type="button" data-lang="ar">AR</button>
+      </div>
+      <a href="courses.html" class="btn btn-on-dark" data-i18n="nav.cta">Start Learning</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="hero-stars"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <span class="eyebrow" data-i18n="contact.hero.eyebrow">Get in touch</span>
+    <h1 class="h-display h-lg on-dark" data-i18n="contact.hero.title">Let's find your starting point.</h1>
+    <p class="lede on-dark" style="margin:18px auto 0;" data-i18n="contact.hero.sub">Whether you're one learner or a whole institution, someone on our team will reply within 48 hours.</p>
+    <p class="breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a> / <span data-i18n="nav.contact">Contact</span></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+
+    <div data-reveal>
+      <span class="eyebrow" data-i18n="contact.form.eyebrow">Send a message</span>
+      <h2 class="h-display h-md" style="margin-top:14px; margin-bottom:30px;" data-i18n="contact.form.title">Tell us what you're looking for.</h2>
+
+      <form class="contact-form">
+        <div class="field">
+          <label for="name" data-i18n="contact.form.name">Full name</label>
+          <input id="name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email" data-i18n="contact.form.email">Email address</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="type" data-i18n="contact.form.type">I am reaching out as</label>
+          <select id="type" name="type">
+            <option data-i18n="contact.form.typeOpt1">An individual learner</option>
+            <option data-i18n="contact.form.typeOpt2">A university or institute</option>
+            <option data-i18n="contact.form.typeOpt3">A corporate partner</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="country" data-i18n="contact.form.country">Country</label>
+          <input id="country" name="country" type="text" autocomplete="country-name">
+        </div>
+        <div class="field">
+          <label for="message" data-i18n="contact.form.message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <p class="form-note" data-i18n="contact.form.note">This form is a front-end placeholder — connect it to your inbox or CRM before launch.</p>
+      </form>
+    </div>
+
+    <div data-reveal>
+      <span class="eyebrow" data-i18n="contact.info.eyebrow">Direct lines</span>
+      <h2 class="h-display h-md" style="margin-top:14px; margin-bottom:10px;" data-i18n="contact.info.title">Reach us directly.</h2>
+
+      <div class="contact-info-item">
+        <div>
+          <h4 data-i18n="contact.info.email.title">Email</h4>
+          <p><a href="mailto:hello@ousacademy.com">hello@ousacademy.com</a></p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div>
+          <h4 data-i18n="contact.info.partnerships.title">Institutional partnerships</h4>
+          <p><a href="mailto:partnerships@ousacademy.com">partnerships@ousacademy.com</a></p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div>
+          <h4 data-i18n="contact.info.hours.title">Response time</h4>
+          <p data-i18n="contact.info.hours.body">Within 48 hours, every day of the week.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:44px;">
+        <h3 class="h-display h-sm" style="margin-bottom:20px;" data-i18n="contact.info.regionsTitle">Where we're active</h3>
+        <div class="regions" style="background:var(--line); border-color:var(--line);">
+          <div class="region-card" style="background:var(--paper);">
+            <h3 style="color:var(--ink);" data-i18n="home.reach.individuals.title">For individuals</h3>
+            <ul>
+              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.individuals.r1">Latin America</span></li>
+              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.individuals.r2">Turkey</span></li>
+              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.individuals.r3">The Middle East</span></li>
+            </ul>
+          </div>
+          <div class="region-card" style="background:var(--paper);">
+            <h3 style="color:var(--ink);" data-i18n="home.reach.institutions.title">For institutions</h3>
+            <ul>
+              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.institutions.r1">Universities across Africa</span></li>
+              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.institutions.r2">Institutes across Asia</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/img/badge.svg" alt="OUS Academy" class="brand-mark">
+        <p data-i18n="footer.tagline">OUS Academy — English, Simplified. Oxford-level instruction, built for everyone.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.explore">Explore</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="courses.html" data-i18n="nav.courses">Courses</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.programs">Programs</h4>
+        <ul>
+          <li><a href="courses.html" data-i18n="home.courses.c1.title">General English</a></li>
+          <li><a href="courses.html" data-i18n="home.courses.c2.title">Business English</a></li>
+          <li><a href="courses.html" data-i18n="home.courses.c3.title">Exam Preparation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.contactHead">Get in touch</h4>
+        <ul>
+          <li><a href="mailto:hello@ousacademy.com">hello@ousacademy.com</a></li>
+          <li><a href="contact.html" data-i18n="footer.contactLink">Contact form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.rights">© 2026 OUS Academy. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="LinkedIn">IN</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
