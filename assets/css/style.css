@@ -194,9 +194,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero{
   position:relative;
   background:
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(169,132,63,0.14), transparent 60%),
-    linear-gradient(180deg, rgba(20,18,16,0.62) 0%, rgba(24,22,20,0.86) 48%, rgba(27,25,23,0.97) 100%),
-    url('../img/hero-house-sunset.jpg') center 62%/cover no-repeat;
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(169,132,63,0.16), transparent 60%),
+    linear-gradient(180deg, var(--ink-deep) 0%, #232120 55%, #2A2724 100%);
   color:var(--parchment);
   padding-top:180px;
   overflow:hidden;
@@ -339,107 +338,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .breadcrumb{ margin-top:22px; font-size:13px; color:rgba(243,235,214,0.5); }
 .breadcrumb a{ color:rgba(243,235,214,0.75); }
 
-.page-hero.page-hero-photo{
-  background:
-    linear-gradient(180deg, rgba(20,18,16,0.72) 0%, rgba(24,22,20,0.9) 55%, rgba(27,25,23,0.98) 100%),
-    url('../img/hero-house-day.jpg') center 58%/cover no-repeat;
-}
-
 /* =========================================================
-   COMING SOON BADGE
+   ABOUT PAGE — crest breakdown
    ========================================================= */
-.badge-soon{
-  display:inline-flex; align-items:center; gap:8px;
-  background:rgba(243,235,214,0.1); border:1px solid var(--line-soft);
-  color:var(--brass-soft); font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-  padding:6px 13px; border-radius:999px; white-space:nowrap;
-}
-.badge-soon .dot{ width:6px; height:6px; border-radius:50%; background:var(--brass-soft); animation:pulseDot 2.2s ease-in-out infinite; }
-@keyframes pulseDot{ 0%,100%{opacity:1} 50%{opacity:.3} }
-.badge-soon.on-light{ background:rgba(42,42,42,0.05); border-color:var(--line); color:var(--brass); }
-.badge-soon.on-light .dot{ background:var(--brass); }
-
-/* =========================================================
-   OFFER CARDS (Fluido / References / Books / Test — homepage teaser)
-   ========================================================= */
-.offer-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
-.offer-card{
-  background:var(--white); border:1px solid var(--line);
-  padding:30px 26px; display:flex; flex-direction:column; gap:14px;
-  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
-}
-.offer-card:hover{ transform:translateY(-6px); box-shadow:0 24px 48px -22px rgba(42,42,42,0.18); }
-.offer-icon{ width:38px; height:38px; }
-.offer-card h3{ font-family:var(--f-display); font-size:19px; font-weight:600; }
-.offer-card p{ font-size:13.5px; color:#5c5a54; line-height:1.6; flex:1; }
-
-/* =========================================================
-   REFERENCE / BOOK GRIDS (programs page)
-   ========================================================= */
-.ref-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
-.ref-card{ background:var(--paper); padding:34px 28px; display:flex; flex-direction:column; gap:12px; }
-.ref-card h3{ font-family:var(--f-display); font-size:19px; font-weight:600; }
-.ref-card p{ font-size:13.5px; color:#5c5a54; line-height:1.6; }
-
-.book-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
-.book-card{ text-align:center; padding:34px 20px; border:1px solid var(--line); background:var(--white); }
-.book-cover{
-  width:56px; height:74px; margin:0 auto 18px; background:linear-gradient(155deg,var(--ink) 0%,#3a3733 100%);
-  position:relative; box-shadow:3px 3px 0 var(--line);
-}
-.book-cover::before{ content:''; position:absolute; inset-inline-start:6px; top:10px; bottom:10px; width:1px; background:rgba(243,235,214,0.3); }
-.book-card h4{ font-family:var(--f-display); font-size:16px; font-weight:600; }
-.book-card p{ margin-top:8px; font-size:13px; color:#5c5a54; line-height:1.55; }
-
-/* =========================================================
-   FLUIDO APP SPOTLIGHT
-   ========================================================= */
-.app-spotlight{ display:grid; grid-template-columns:.95fr 1.05fr; gap:64px; align-items:center; }
-.phone-mock{
-  width:230px; aspect-ratio:9/18.5; margin-inline:auto;
-  border:9px solid var(--ink); border-radius:36px; background:linear-gradient(165deg,#2A2724,#171614);
-  position:relative; box-shadow:0 40px 70px -26px rgba(0,0,0,0.55); overflow:hidden;
-}
-.phone-mock::before{
-  content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
-  width:46%; height:20px; background:var(--ink); border-radius:0 0 14px 14px; z-index:2;
-}
-.phone-screen{ position:absolute; inset:0; padding:34px 16px 16px; display:flex; flex-direction:column; gap:10px; }
-.phone-row{ height:10px; border-radius:3px; background:rgba(243,235,214,0.14); }
-.phone-row.w60{ width:60%; } .phone-row.w80{ width:80%; } .phone-row.w40{ width:40%; }
-.phone-chip{ margin-top:auto; height:38px; border-radius:8px; background:rgba(169,132,63,0.35); border:1px solid rgba(201,168,99,0.5); display:flex; align-items:center; justify-content:center; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--parchment); }
-.phone-progress{ display:flex; gap:5px; margin-top:6px; }
-.phone-progress span{ flex:1; height:4px; border-radius:2px; background:rgba(243,235,214,0.12); }
-.phone-progress span.done{ background:var(--brass-soft); }
-
-.app-feature-list{ display:flex; flex-direction:column; gap:22px; margin-top:26px; }
-.app-feature{ display:flex; gap:16px; }
-.app-feature-num{ font-family:var(--f-display); color:var(--brass); font-size:14px; flex:none; padding-top:2px; }
-.app-feature h4{ font-family:var(--f-display); font-size:17px; font-weight:600; }
-.app-feature p{ margin-top:5px; font-size:14px; color:#5c5a54; line-height:1.6; }
-
-/* =========================================================
-   OUS TEST FEATURE BAND
-   ========================================================= */
-.test-band{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
-.test-stats{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
-.test-stat{ padding:28px; background:var(--ink-deep); }
-.test-stat .num{ font-family:var(--f-display); font-size:30px; font-weight:600; color:var(--brass-soft); }
-.test-stat .label{ margin-top:6px; font-size:13px; color:rgba(243,235,214,0.65); }
-
-@media (max-width: 980px){
-  .offer-grid{ grid-template-columns:repeat(2,1fr); }
-  .ref-grid{ grid-template-columns:repeat(2,1fr); }
-  .book-grid{ grid-template-columns:repeat(2,1fr); }
-  .app-spotlight{ grid-template-columns:1fr; }
-  .test-band{ grid-template-columns:1fr; }
-}
-@media (max-width: 620px){
-  .offer-grid{ grid-template-columns:1fr; }
-  .ref-grid{ grid-template-columns:1fr; }
-  .book-grid{ grid-template-columns:1fr; }
-  .test-stats{ grid-template-columns:1fr; }
-}
 .crest-breakdown{ display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:center; }
 .crest-visual{ display:flex; justify-content:center; }
 .crest-visual img{ width:78%; }
