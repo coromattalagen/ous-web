@@ -83,27 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     starsField.appendChild(svg);
   }
 
-  /* ---- wolf pack horizon line ---- */
-  document.querySelectorAll('.wolf-line').forEach(container => {
-    fetch('assets/img/wolf.svg').then(r => r.text()).then(markup => {
-      const count = window.innerWidth < 700 ? 5 : 9;
-      const wrap = document.createElement('div');
-      wrap.style.cssText = 'position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:space-between;align-items:flex-end;padding:0 4%;';
-      for (let i = 0; i < count; i++) {
-        const span = document.createElement('span');
-        span.innerHTML = markup;
-        const svg = span.querySelector('svg');
-        svg.setAttribute('width', '34');
-        svg.setAttribute('height', '34');
-        svg.style.opacity = (0.35 + (i % 3) * 0.18).toFixed(2);
-        svg.style.transform = `translateY(${(i % 2 === 0) ? '0px' : '4px'})`;
-        const path = svg.querySelector('path');
-        if (path) path.setAttribute('fill', '#F3EBD6');
-        wrap.appendChild(span);
-      }
-      container.appendChild(wrap);
-    }).catch(() => {});
-  });
+  /* (decorative wolf-pack horizon line removed) */
 
   /* ---- course filter tabs ---- */
   const filterBtns = document.querySelectorAll('.filter-btn');

@@ -43,7 +43,7 @@ en: {
       o4:{title:"OUS Test", body:"A professional, globally benchmarked English level test — for individuals and institutions."}
     },
     reach: {
-      eyebrow:"Where the pack runs", title:"One community, spanning several continents.",
+      eyebrow:"Where we're starting", title:"One community, spanning several continents.",
       individuals:{title:"For individuals", r1:"Latin America", r2:"Turkey", r3:"The Middle East"},
       institutions:{title:"For institutions", r1:"Universities across Africa", r2:"Institutes across Asia", r3:"Corporate & partner programs"}
     },
@@ -89,7 +89,8 @@ en: {
     institutions:{
       eyebrow:"For universities & institutes",
       title:"Bring the OUS toolkit to your institution.",
-      body:"We're building OUS References, Fluido, and OUS Test to work at institutional scale — bulk licensing, co-branded certification, and integration with your existing programs.",
+      longterm:"Long-term project — in active development",
+      body:"This is one of our longer-horizon efforts: building OUS References, Fluido, and OUS Test to work at institutional scale — bulk licensing, co-branded certification, and integration with your existing programs.",
       cta:"Discuss a Partnership",
       i1:{title:"Bulk licensing", body:"OUS References and Fluido, made available across your student body."},
       i2:{title:"OUS Test certification", body:"Run official level testing for your students or staff, at scale."},
@@ -99,19 +100,12 @@ en: {
   },
 
   about: {
-    hero:{ eyebrow:"About OUS Academy", title:"A seal built on a promise, not just a shield.", sub:"Every mark in our crest means something. Here's the academy behind it." },
+    hero:{ eyebrow:"About OUS Academy", title:"Built for the many, not the few.", sub:"Here's the story behind OUS Academy." },
     mission:{
       eyebrow:"Why we exist",
       title:"English was never meant to be a privilege only the elite could afford.",
-      p1:"For generations, fluent English has quietly sorted people — who gets the scholarship, who gets the interview, who gets to be understood in the room. Not because they lacked the ability, but because they lacked the thousand-dollar tuition.",
-      p2:"OUS Academy was founded on a simple refusal to accept that. We build tools with the same rigor you'd expect from the world's leading academic institutions — and price them like the right they should have always been."
-    },
-    crest:{
-      eyebrow:"Read the seal", title:"What's actually on our crest.",
-      i1:{title:"The seven wolves", body:"A pack, not a lone learner. Every OUS product is built so you move through it alongside a community of learners and the team building it with you — English is learned in company, not isolation."},
-      i2:{title:"The crescent moons", body:"Guidance through the parts of learning that happen in the dark — the plateaus, the slow weeks — with a clear light to navigate by."},
-      i3:{title:"The twin towers", body:"A nod to the academic institutions we hold ourselves to the standard of — without inheriting their gates."},
-      i4:{title:'"Universal Languages"', body:"Our founding banner line — a reminder that the goal was never just English. It's the ability to be understood, anywhere."}
+      p1:"Fluent English has always opened doors — scholarships, jobs, conversations. For most people, the only thing standing in the way was the price.",
+      p2:"We founded OUS Academy in 2024 to close that gap. Same rigor, real accessibility."
     },
     values:{
       eyebrow:"How we operate", title:"Four principles, held since day one.",
@@ -133,7 +127,7 @@ en: {
       m3:{name:"Team Member Name", role:"Fluido Product Lead"},
       m4:{name:"Advisor Name", role:"Partnerships"}
     },
-    cta:{ eyebrow:"Join the pack", title:"Come learn with people who are going exactly where you are.", secondary:"Get in Touch" }
+    cta:{ eyebrow:"Join the learners", title:"Come learn with people who are going exactly where you are.", secondary:"Get in Touch" }
   },
 
   contact: {
@@ -195,7 +189,7 @@ ar: {
       o4:{title:"اختبار أوس", body:"اختبار مستوى إنجليزي احترافي بمعايير عالمية — للأفراد والمؤسسات."}
     },
     reach: {
-      eyebrow:"أين تجري القافلة", title:"مجتمع واحد، يمتد عبر عدة قارات.",
+      eyebrow:"من أين نبدأ", title:"مجتمع واحد، يمتد عبر عدة قارات.",
       individuals:{title:"للأفراد", r1:"أمريكا اللاتينية", r2:"تركيا", r3:"الشرق الأوسط"},
       institutions:{title:"للمؤسسات", r1:"جامعات في إفريقيا", r2:"معاهد في آسيا", r3:"برامج شركات وشراكات"}
     },
@@ -241,7 +235,8 @@ ar: {
     institutions:{
       eyebrow:"للجامعات والمعاهد",
       title:"اجلب مجموعة أدوات أوس إلى مؤسستك.",
-      body:"نعمل على بناء مراجع أوس وفلويدو واختبار أوس ليعملوا على نطاق مؤسسي — ترخيص جماعي، شهادات مشتركة العلامة، وتكامل مع برامجكم الحالية.",
+      longterm:"مشروع بعيد المدى — قيد التطوير الفعلي",
+      body:"هذا أحد مشاريعنا الأبعد مدى: نعمل على بناء مراجع أوس وفلويدو واختبار أوس ليعملوا على نطاق مؤسسي — ترخيص جماعي، شهادات مشتركة العلامة، وتكامل مع برامجكم الحالية.",
       cta:"ناقش شراكة",
       i1:{title:"ترخيص جماعي", body:"مراجع أوس وفلويدو، متاحة لكامل طلابكم."},
       i2:{title:"شهادة اختبار أوس", body:"شغّل اختبارات مستوى رسمية لطلابكم أو موظفيكم، على نطاق واسع."},
@@ -251,19 +246,12 @@ ar: {
   },
 
   about: {
-    hero:{ eyebrow:"عن أكاديمية أوس", title:"ختم بُني على وعد، لا مجرد شعار.", sub:"كل رمز في شعارنا يحمل معنى. هذه هي الأكاديمية وراءه." },
+    hero:{ eyebrow:"عن أكاديمية أوس", title:"بُنيت للجميع، لا للنخبة.", sub:"هذه هي القصة وراء أكاديمية أوس." },
     mission:{
       eyebrow:"لماذا وُجدنا",
       title:"لم تكن اللغة الإنجليزية يوماً حكراً على نخبة قادرة على دفع تكاليفها.",
-      p1:"لأجيال، صنّفت الإنجليزية الطلقة الناس بهدوء — من يحصل على المنحة، من يُقبل في المقابلة، من يُفهم داخل الغرفة. ليس لنقص في القدرة، بل لغياب تكلفة قد تصل آلاف الدولارات.",
-      p2:"تأسست أكاديمية أوس على رفض بسيط لهذا الواقع. نبني أدوات بنفس الصرامة التي تتوقعها من أعرق المؤسسات الأكاديمية في العالم — ونسعّرها كما يجب أن تكون: حقاً، لا امتيازاً."
-    },
-    crest:{
-      eyebrow:"اقرأ الختم", title:"ماذا يحمل شعارنا فعلاً.",
-      i1:{title:"الذئاب السبعة", body:"قطيع، لا متعلم منفرد. كل منتج من أوس مصمم لتمضي عبره مع مجتمع من المتعلمين والفريق الذي يبنيه معك — الإنجليزية تُتعلَّم برفقة، لا بعزلة."},
-      i2:{title:"الأهلّة", body:"إرشاد خلال المراحل التي يمر بها التعلم في الظلام — فترات الركود والأسابيع البطيئة — بضوء واضح تُهتدى به."},
-      i3:{title:"البرجان التوأمان", body:"إشارة إلى المؤسسات الأكاديمية التي نُحاسب أنفسنا وفق معاييرها — دون أن نرث بواباتها."},
-      i4:{title:'"لغات عالمية"', body:"شعار تأسيسنا على الشريط — تذكير بأن الهدف لم يكن الإنجليزية وحدها، بل القدرة على أن تُفهم، في أي مكان."}
+      p1:"الإنجليزية الطلقة كانت دائماً تفتح أبواباً — منح دراسية، وظائف، محادثات. وما كان يقف في الطريق غالباً هو السعر فقط.",
+      p2:"أسسنا أكاديمية أوس عام ٢٠٢٤ لسد هذه الفجوة. نفس الصرامة، وإتاحة حقيقية."
     },
     values:{
       eyebrow:"كيف نعمل", title:"أربع قيم، نحملها منذ اليوم الأول.",
@@ -285,7 +273,7 @@ ar: {
       m3:{name:"اسم عضو الفريق", role:"مسؤول منتج فلويدو"},
       m4:{name:"اسم المستشار", role:"الشراكات"}
     },
-    cta:{ eyebrow:"انضم إلى القطيع", title:"تعلّم مع أشخاص يسيرون بالضبط نحو الوجهة التي تسير إليها.", secondary:"تواصل معنا" }
+    cta:{ eyebrow:"انضم إلى المتعلمين", title:"تعلّم مع أشخاص يسيرون بالضبط نحو الوجهة التي تسير إليها.", secondary:"تواصل معنا" }
   },
 
   contact: {
