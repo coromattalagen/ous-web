@@ -376,7 +376,70 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .ref-card h3{ font-family:var(--f-display); font-size:19px; font-weight:600; }
 .ref-card p{ font-size:13.5px; color:#5c5a54; line-height:1.6; }
 
+/* =========================================================
+   FEATURED FREE RESOURCE — book showcase (e.g. OUS Voca Builder)
+   ========================================================= */
 .book-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.badge-free{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--ink); color:var(--parchment);
+  font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  padding:7px 14px 7px 10px; border-radius:999px; white-space:nowrap;
+}
+.badge-free svg{ width:14px; height:14px; flex:none; }
+
+.voca-showcase{
+  display:grid; grid-template-columns:.85fr 1.15fr; gap:72px; align-items:center;
+}
+.voca-fan{
+  position:relative; height:420px; display:flex; align-items:center; justify-content:center;
+}
+.voca-fan-item{
+  position:absolute; width:190px; border-radius:6px; overflow:hidden;
+  box-shadow:0 24px 48px -18px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.15);
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease);
+  border:1px solid rgba(0,0,0,0.08);
+}
+.voca-fan-item img{ display:block; width:100%; height:auto; }
+.voca-fan-item:nth-child(1){ transform:rotate(-14deg) translate(-86px, 6px); z-index:1; }
+.voca-fan-item:nth-child(2){ transform:rotate(-5deg) translate(-30px, -6px); z-index:2; }
+.voca-fan-item:nth-child(3){ transform:rotate(5deg) translate(30px, -6px); z-index:3; }
+.voca-fan-item:nth-child(4){ transform:rotate(14deg) translate(86px, 6px); z-index:4; }
+.voca-showcase:hover .voca-fan-item{ box-shadow:0 30px 56px -18px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.18); }
+.voca-fan-item:nth-child(1):hover{ transform:rotate(-16deg) translate(-92px, -6px) scale(1.03); z-index:5; }
+.voca-fan-item:nth-child(2):hover{ transform:rotate(-6deg) translate(-32px, -18px) scale(1.03); z-index:5; }
+.voca-fan-item:nth-child(3):hover{ transform:rotate(6deg) translate(32px, -18px) scale(1.03); z-index:5; }
+.voca-fan-item:nth-child(4):hover{ transform:rotate(16deg) translate(92px, -6px) scale(1.03); z-index:5; }
+
+.voca-features{ display:flex; flex-direction:column; gap:12px; margin:24px 0 28px; }
+.voca-features li{ display:flex; align-items:flex-start; gap:12px; font-size:14.5px; color:#4a4842; line-height:1.55; }
+.voca-features svg{ width:18px; height:18px; flex:none; margin-top:2px; color:var(--brass); }
+
+.voca-volumes{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
+.voca-volume-pill{
+  display:inline-flex; align-items:center; gap:9px;
+  border:1px solid var(--line); background:var(--white);
+  padding:9px 15px 9px 10px; border-radius:999px; font-size:13px; font-weight:600;
+  transition:border-color .25s, transform .25s;
+}
+.voca-volume-pill:hover{ border-color:var(--ink); transform:translateY(-2px); }
+.voca-volume-swatch{ width:10px; height:10px; border-radius:50%; flex:none; }
+.voca-volume-pill svg{ width:13px; height:13px; opacity:.55; margin-inline-start:2px; }
+
+@media (max-width: 980px){
+  .voca-showcase{ grid-template-columns:1fr; gap:48px; }
+  .voca-fan{ height:340px; }
+  .voca-fan-item{ width:150px; }
+}
+@media (max-width: 620px){
+  .voca-fan{ height:280px; }
+  .voca-fan-item{ width:118px; }
+  .voca-fan-item:nth-child(1){ transform:rotate(-14deg) translate(-56px, 6px); }
+  .voca-fan-item:nth-child(2){ transform:rotate(-5deg) translate(-20px, -4px); }
+  .voca-fan-item:nth-child(3){ transform:rotate(5deg) translate(20px, -4px); }
+  .voca-fan-item:nth-child(4){ transform:rotate(14deg) translate(56px, 6px); }
+}
+
 .book-card{ text-align:center; padding:34px 20px; border:1px solid var(--line); background:var(--white); }
 .book-cover{
   width:56px; height:74px; margin:0 auto 18px; background:linear-gradient(155deg,var(--ink) 0%,#3a3733 100%);
@@ -466,6 +529,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    CONTACT PAGE
    ========================================================= */
 .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+.hp-field{
+  position:absolute; left:-9999px; top:-9999px;
+  width:1px; height:1px; overflow:hidden;
+}
 .field{ margin-bottom:22px; }
 .field label{ display:block; font-size:12.5px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-bottom:8px; color:#5c5a54; }
 .field input, .field textarea, .field select{
