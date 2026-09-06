@@ -1,0 +1,21 @@
+# =========================================================
+# Security headers — Netlify / Cloudflare Pages format
+# Reference: OWASP Secure Headers Project (owasp.org/www-project-secure-headers)
+#            Mozilla Observatory best-practice header set
+#
+# This file is auto-detected by Netlify and Cloudflare Pages.
+# It has no effect on other hosts — see .htaccess (Apache) or
+# vercel.json (Vercel) for equivalent configs, or ask your host
+# how to set custom response headers.
+# =========================================================
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-XSS-Protection: 1; mode=block
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin

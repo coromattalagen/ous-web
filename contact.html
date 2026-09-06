@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow">
 <title>Contact — OUS Academy</title>
 <meta name="description" content="Talk to an advisor, ask about institutional partnerships, or start your placement — OUS Academy is one message away.">
 <link rel="icon" href="assets/img/badge.svg" type="image/svg+xml">
@@ -54,14 +57,19 @@
       <span class="eyebrow" data-i18n="contact.form.eyebrow">Send a message</span>
       <h2 class="h-display h-md" style="margin-top:14px; margin-bottom:30px;" data-i18n="contact.form.title">Tell us what you're looking for.</h2>
 
-      <form class="contact-form">
+      <form class="contact-form" novalidate>
+        <!-- Honeypot: hidden from humans, bots tend to fill every field -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">Website</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
         <div class="field">
           <label for="name" data-i18n="contact.form.name">Full name</label>
-          <input id="name" name="name" type="text" required autocomplete="name">
+          <input id="name" name="name" type="text" required autocomplete="name" maxlength="120">
         </div>
         <div class="field">
           <label for="email" data-i18n="contact.form.email">Email address</label>
-          <input id="email" name="email" type="email" required autocomplete="email">
+          <input id="email" name="email" type="email" required autocomplete="email" maxlength="180" spellcheck="false">
         </div>
         <div class="field">
           <label for="type" data-i18n="contact.form.type">I am reaching out as</label>
@@ -74,11 +82,11 @@
         </div>
         <div class="field">
           <label for="country" data-i18n="contact.form.country">Country</label>
-          <input id="country" name="country" type="text" autocomplete="country-name">
+          <input id="country" name="country" type="text" autocomplete="country-name" maxlength="80">
         </div>
         <div class="field">
           <label for="message" data-i18n="contact.form.message">Message</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" required maxlength="2000"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
         <p class="form-status" role="status" aria-live="polite"></p>
@@ -169,10 +177,10 @@
     <div class="footer-bottom">
       <span data-i18n="footer.rights">© 2026 OUS Academy. All rights reserved.</span>
       <div class="footer-socials">
-        <a href="https://instagram.com/ousacademy47" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-        <a href="https://facebook.com/ousacademy47" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-        <a href="https://www.threads.net/@ousacademy47" target="_blank" rel="noopener" aria-label="Threads">TH</a>
-        <a href="https://youtube.com/@ousacademy47" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+        <a href="https://instagram.com/ousacademy47" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        <a href="https://facebook.com/ousacademy47" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
+        <a href="https://www.threads.net/@ousacademy47" target="_blank" rel="noopener noreferrer" aria-label="Threads">TH</a>
+        <a href="https://youtube.com/@ousacademy47" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
       </div>
     </div>
   </div>
