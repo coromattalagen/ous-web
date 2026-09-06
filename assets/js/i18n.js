@@ -77,6 +77,17 @@ en: {
       b3:{title:"Travel & Everyday Life", body:"The English you'll actually use day to day."},
       b4:{title:"Specialized Fields", body:"Medicine, tech, hospitality, and more."}
     },
+    voca:{
+      badge:"Free — Available Now",
+      title:"OUS Voca Builder — New Generation",
+      body:"A practical vocabulary workbook released in four volumes — 500 essential words per volume, 2,000 across the complete set. Built to be used, not just read.",
+      f1:"500 words per volume — 2,000 across all four, organized by real-world use",
+      f2:"Workbook format with practical exercises, not just word lists",
+      f3:"Levels A1–B2 — built for real beginners through solid intermediate learners",
+      f4:"Completely free — no account, no catch",
+      vol1:"Volume 1", vol2:"Volume 2", vol3:"Volume 3", vol4:"Volume 4",
+      cta:"Download Free"
+    },
     test:{
       title:"OUS Test — a level test that means something, anywhere.",
       body:"A professional English assessment, built to global standards — for individual learners who need proof of their level, and for institutions who need a reliable way to measure it at scale.",
@@ -222,6 +233,16 @@ ar: {
       b2:{title:"الإنجليزية الأكاديمية", body:"مقالات، بحوث، وحياة جامعية."},
       b3:{title:"السفر والحياة اليومية", body:"الإنجليزية التي ستستخدمها فعلاً يومياً."},
       b4:{title:"مجالات متخصصة", body:"الطب، التقنية، الضيافة، وغيرها."}
+    },
+    voca:{
+      badge:"مجاني — متاح الآن",
+      title:'<bdi>OUS Voca Builder</bdi> — الجيل الجديد',      body:"دليل مفردات عملي صدر في أربعة مجلدات — 500 كلمة أساسية في كل مجلد، بمجموع 2000 كلمة عبر المجموعة الكاملة. مصمم لتُستخدم، لا لتُقرأ فقط.",
+      f1:"500 كلمة في كل مجلد — 2000 كلمة عبر المجلدات الأربعة، منظمة حسب الاستخدام الفعلي",
+      f2:"بصيغة كتاب تمارين عملي، لا مجرد قوائم كلمات",
+      f3:"للمستويات A1–B2 — للمبتدئين الحقيقيين وحتى المتوسطين المتمكنين",
+      f4:"مجاني بالكامل — دون حساب، ودون أي شرط خفي",
+      vol1:"المجلد الأول", vol2:"المجلد الثاني", vol3:"المجلد الثالث", vol4:"المجلد الرابع",
+      cta:"تحميل مجاني"
     },
     test:{
       title:"اختبار أوس — اختبار مستوى له معنى، في أي مكان.",

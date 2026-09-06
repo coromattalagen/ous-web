@@ -108,8 +108,30 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const note = form.querySelector('.form-status');
+      const isRTL = document.documentElement.dir === 'rtl';
+
+      // Honeypot: if this hidden field got filled in, silently drop the submission.
+      // Real bots fill every field; real users never see or touch it.
+      const honeypot = form.querySelector('#website');
+      if (honeypot && honeypot.value.trim() !== '') {
+        form.reset();
+        return;
+      }
+
+      // Minimal client-side validation (server-side validation is still required
+      // once this form is wired to a real backend — never trust client input alone).
+      if (!form.checkValidity()) {
+        if (note) {
+          note.textContent = isRTL
+            ? 'يرجى تعبئة الحقول المطلوبة بشكل صحيح.'
+            : 'Please fill in the required fields correctly.';
+          note.style.color = '#b3432b';
+        }
+        return;
+      }
+
       if (note) {
-        note.textContent = document.documentElement.dir === 'rtl'
+        note.textContent = isRTL
           ? 'تم استلام رسالتك — سنعاود التواصل خلال ٤٨ ساعة.'
           : 'Message received — our team will reply within 48 hours.';
         note.style.color = '#A9843F';
