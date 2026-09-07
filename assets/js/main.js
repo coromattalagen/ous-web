@@ -140,4 +140,147 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---- back to top ---- */
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    const toggleBackToTop = () => backToTop.classList.toggle('is-visible', window.scrollY > 600);
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ---- scroll progress bar ---- */
+  const scrollProgress = document.querySelector('.scroll-progress');
+  if (scrollProgress) {
+    const updateProgress = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      scrollProgress.style.width = pct + '%';
+    };
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+  }
+
+  /* ---- card tilt micro-interaction (desktop pointer devices only) ---- */
+  const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canTilt) {
+    const tiltTargets = document.querySelectorAll('.offer-card, .book-card, .ref-card, .pillar');
+    tiltTargets.forEach(card => {
+      let raf = null;
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        const rotateY = px * 8;
+        const rotateX = -py * 8;
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        if (raf) cancelAnimationFrame(raf);
+        card.style.transform = '';
+      });
+    });
+  }
+
+  /* ---- number count-up for stat blocks (OUS Test section) ---- */
+  const statNums = document.querySelectorAll('.test-stat .num');
+  if ('IntersectionObserver' in window && statNums.length) {
+    const countIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const raw = el.textContent.trim();
+        if (/^\d+$/.test(raw)) {
+          const target = parseInt(raw, 10);
+          const duration = 800;
+          let start = null;
+          const step = (ts) => {
+            if (!start) start = ts;
+            const progress = Math.min((ts - start) / duration, 1);
+            el.textContent = String(Math.floor(progress * target));
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = String(target);
+          };
+          requestAnimationFrame(step);
+        }
+        countIo.unobserve(el);
+      });
+    }, { threshold: 0.6 });
+    statNums.forEach(el => countIo.observe(el));
+  }
+
+  /* ---- announcement modal (entry promo) ----
+     Content is data-driven via data-i18n on the markup itself, so swapping
+     what's being promoted later is just an HTML/i18n edit — no JS changes needed.
+     Shown once per browser session (sessionStorage), with a short entrance delay. */
+  const announceOverlay = document.getElementById('announceOverlay');
+  if (announceOverlay) {
+    const announceCard = announceOverlay.querySelector('.announce-card');
+    const announceClose = document.getElementById('announceClose');
+    const announceDismiss = document.getElementById('announceDismiss');
+    const announceDownload = document.getElementById('announceDownload');
+    const announceExplore = document.getElementById('announceExplore');
+    const STORAGE_KEY = 'ousAnnouncementSeen';
+    let lastFocused = null;
+
+    const hasSeenAnnouncement = () => {
+      try { return sessionStorage.getItem(STORAGE_KEY) === '1'; }
+      catch (e) { return false; }
+    };
+    const markAnnouncementSeen = () => {
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) { /* ignore (private mode, etc.) */ }
+    };
+
+    const onAnnounceKeydown = (e) => {
+      if (e.key === 'Escape') { closeAnnounce(); return; }
+      if (e.key === 'Tab') {
+        const focusables = announceCard.querySelectorAll('a[href], button:not([disabled])');
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+    };
+
+    function openAnnounce() {
+      if (hasSeenAnnouncement()) return;
+      lastFocused = document.activeElement;
+      announceOverlay.hidden = false;
+      requestAnimationFrame(() => announceOverlay.classList.add('is-open'));
+      document.body.style.overflow = 'hidden';
+      if (announceClose) announceClose.focus();
+      document.addEventListener('keydown', onAnnounceKeydown);
+    }
+
+    function closeAnnounce() {
+      announceOverlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onAnnounceKeydown);
+      markAnnouncementSeen();
+      window.setTimeout(() => { announceOverlay.hidden = true; }, 380);
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    if (announceClose) announceClose.addEventListener('click', closeAnnounce);
+    if (announceDismiss) announceDismiss.addEventListener('click', closeAnnounce);
+    if (announceDownload) announceDownload.addEventListener('click', closeAnnounce);
+    if (announceExplore) announceExplore.addEventListener('click', closeAnnounce);
+    announceOverlay.addEventListener('click', (e) => {
+      if (e.target === announceOverlay) closeAnnounce();
+    });
+
+    window.setTimeout(openAnnounce, 1100);
+  }
+
 });

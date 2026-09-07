@@ -5,6 +5,14 @@ const OUS_I18N = {
 
 en: {
   brand:{ name:'OUS <em>Academy</em>' },
+  announce:{
+    badge:"Free — New Release",
+    title:"OUS Voca Builder is here — completely free.",
+    body:"Four volumes, 500 words each — 2,000 words total. A practical vocabulary workbook, not just a list. Built for levels A1–B2.",
+    download:"Download Free",
+    explore:"Explore All Volumes",
+    dismiss:"Maybe later"
+  },
   nav: { home:"Home", programs:"Programs", about:"About", contact:"Contact", cta:"Join the Waitlist" },
   common:{ comingSoon:"Coming Soon" },
 
@@ -162,6 +170,14 @@ en: {
 
 ar: {
   brand:{ name:'أكاديمية <em>أوس</em>' },
+  announce:{
+    badge:"مجاني — إصدار جديد",
+    title:"OUS Voca Builder وصل الآن — مجاني بالكامل.",
+    body:"أربعة مجلدات، 500 كلمة في كل واحد — 2000 كلمة بالمجموع. دليل مفردات عملي، لا مجرد قائمة. مصمم للمستويات A1–B2.",
+    download:"تحميل مجاني",
+    explore:"استكشف كل المجلدات",
+    dismiss:"لاحقاً"
+  },
   nav: { home:"الرئيسية", programs:"البرامج", about:"عن الأكاديمية", contact:"تواصل", cta:"انضم لقائمة الانتظار" },
   common:{ comingSoon:"قريباً" },
 
@@ -323,7 +339,10 @@ ar: {
     return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined) ? acc[key] : undefined, dict);
   }
 
+  let currentLang = 'en';
+
   function applyLang(lang){
+    currentLang = lang;
     const dict = OUS_I18N[lang] || OUS_I18N.en;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -341,12 +360,18 @@ ar: {
     });
 
     document.body.setAttribute('data-lang', lang);
+    document.dispatchEvent(new CustomEvent('ous:lang-applied', { detail: { lang } }));
   }
 
   function detectDefault(){
     const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
     return nav.startsWith('ar') ? 'ar' : 'en';
   }
+
+  // Exposed so other scripts (e.g. the announcement modal) can translate
+  // content they inject into the DOM after the initial page translation pass.
+  window.OUS_getLang = () => currentLang;
+  window.OUS_reapplyI18n = () => applyLang(currentLang);
 
   document.addEventListener('DOMContentLoaded', () => {
     applyLang(detectDefault());
