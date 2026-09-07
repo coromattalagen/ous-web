@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="about">
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="container header-row">
@@ -207,6 +208,38 @@
     </div>
   </div>
 </footer>
+
+<!-- ============ ANNOUNCEMENT MODAL (entry promo) ============ -->
+<div class="announce-overlay" id="announceOverlay" hidden>
+  <div class="announce-card" role="dialog" aria-modal="true" aria-labelledby="announceTitle" aria-describedby="announceDesc">
+    <button type="button" class="announce-close" id="announceClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="announce-visual" aria-hidden="true">
+      <div class="announce-fan">
+        <img src="assets/img/books/voca-builder-vol2.jpg" alt="">
+        <img src="assets/img/books/voca-builder-vol3.jpg" alt="">
+      </div>
+    </div>
+    <div class="announce-content">
+      <span class="badge-free">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <span data-i18n="announce.badge">Free — New Release</span>
+      </span>
+      <h3 id="announceTitle" class="h-display h-md" style="margin-top:16px;" data-i18n="announce.title">OUS Voca Builder is here — completely free.</h3>
+      <p id="announceDesc" class="lede" data-i18n="announce.body">Four volumes, 500 words each — 2,000 words total. A practical vocabulary workbook, not just a list. Built for levels A1–B2.</p>
+      <div class="announce-actions">
+        <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="btn btn-primary" id="announceDownload" download data-i18n="announce.download">Download Free</a>
+        <a href="programs.html#voca-builder" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
+      </div>
+      <button type="button" class="announce-dismiss" id="announceDismiss" data-i18n="announce.dismiss">Maybe later</button>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
