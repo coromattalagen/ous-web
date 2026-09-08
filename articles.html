@@ -6,15 +6,15 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow">
-<title>Contact — OUS Academy</title>
-<meta name="description" content="Talk to an advisor, ask about institutional partnerships, or start your placement — OUS Academy is one message away.">
+<title>Articles — OUS Academy</title>
+<meta name="description" content="Practical, no-fluff articles on grammar, vocabulary, study habits, and exam preparation — from the team building OUS Academy's learning tools.">
 <link rel="icon" href="assets/img/badge.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body data-page="contact">
+<body data-page="articles">
 
 <header class="site-header">
   <div class="container header-row">
@@ -55,102 +55,110 @@
 <section class="page-hero">
   <div class="hero-stars"></div>
   <div class="container" style="position:relative;z-index:2;">
-    <span class="eyebrow" data-i18n="contact.hero.eyebrow">Get in touch</span>
-    <h1 class="h-display h-lg on-dark" data-i18n="contact.hero.title">Let's find your starting point.</h1>
-    <p class="lede on-dark" style="margin:18px auto 0;" data-i18n="contact.hero.sub">Whether you're one learner or a whole institution, someone on our team will reply within 48 hours.</p>
-    <p class="breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a> / <span data-i18n="nav.contact">Contact</span></p>
+    <span class="eyebrow" data-i18n="articles.hero.eyebrow">OUS Articles</span>
+    <h1 class="h-display h-lg on-dark" data-i18n="articles.hero.title">Practical writing on learning English, well.</h1>
+    <p class="lede on-dark" style="margin:18px auto 0;" data-i18n="articles.hero.sub">Short, useful pieces on grammar, vocabulary, study habits, and exam prep — no filler, written by the team building OUS Academy's tools.</p>
+    <p class="breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a> / <span data-i18n="nav.articles">Articles</span></p>
   </div>
 </section>
 
 <section class="section">
-  <div class="container contact-grid">
-
-    <div data-reveal>
-      <span class="eyebrow" data-i18n="contact.form.eyebrow">Send a message</span>
-      <h2 class="h-display h-md" style="margin-top:14px; margin-bottom:30px;" data-i18n="contact.form.title">Tell us what you're looking for.</h2>
-
-      <form class="contact-form" novalidate>
-        <!-- Honeypot: hidden from humans, bots tend to fill every field -->
-        <div class="hp-field" aria-hidden="true">
-          <label for="website">Website</label>
-          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
-        </div>
-        <div class="field">
-          <label for="name" data-i18n="contact.form.name">Full name</label>
-          <input id="name" name="name" type="text" required autocomplete="name" maxlength="120">
-        </div>
-        <div class="field">
-          <label for="email" data-i18n="contact.form.email">Email address</label>
-          <input id="email" name="email" type="email" required autocomplete="email" maxlength="180" spellcheck="false">
-        </div>
-        <div class="field">
-          <label for="type" data-i18n="contact.form.type">I am reaching out as</label>
-          <select id="type" name="type">
-            <option data-i18n="contact.form.typeOpt1">An individual learner</option>
-            <option data-i18n="contact.form.typeOpt2">A university or institute</option>
-            <option data-i18n="contact.form.typeOpt3">A corporate partner</option>
-            <option data-i18n="contact.form.typeOpt4">Just here to get notified at launch</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="country" data-i18n="contact.form.country">Country</label>
-          <input id="country" name="country" type="text" autocomplete="country-name" maxlength="80">
-        </div>
-        <div class="field">
-          <label for="message" data-i18n="contact.form.message">Message</label>
-          <textarea id="message" name="message" required maxlength="2000"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
-        <p class="form-note" data-i18n="contact.form.note">This form is a front-end placeholder — connect it to your inbox or CRM before launch.</p>
-      </form>
+  <div class="container">
+    <div class="filters" data-reveal>
+      <button class="filter-btn is-active" data-filter="all" data-i18n="articles.filters.all">All Topics</button>
+      <button class="filter-btn" data-filter="grammar" data-i18n="articles.filters.grammar">Grammar</button>
+      <button class="filter-btn" data-filter="vocabulary" data-i18n="articles.filters.vocabulary">Vocabulary</button>
+      <button class="filter-btn" data-filter="study" data-i18n="articles.filters.study">Study Habits</button>
+      <button class="filter-btn" data-filter="exam" data-i18n="articles.filters.exam">Exam Prep</button>
+      <button class="filter-btn" data-filter="culture" data-i18n="articles.filters.culture">Culture &amp; Language</button>
     </div>
 
-    <div data-reveal>
-      <span class="eyebrow" data-i18n="contact.info.eyebrow">Direct lines</span>
-      <h2 class="h-display h-md" style="margin-top:14px; margin-bottom:10px;" data-i18n="contact.info.title">Reach us directly.</h2>
+    <div class="article-grid" data-reveal>
 
-      <div class="contact-info-item">
-        <div>
-          <h4 data-i18n="contact.info.email.title">Email</h4>
-          <p><a href="mailto:hello@ousacademy.com">hello@ousacademy.com</a></p>
+      <article class="article-card" data-course-cat="grammar">
+        <div class="article-media">
+          <span class="course-level" data-i18n="articles.a1.tag">Grammar</span>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
         </div>
-      </div>
-      <div class="contact-info-item">
-        <div>
-          <h4 data-i18n="contact.info.partnerships.title">Institutional partnerships</h4>
-          <p><a href="mailto:partnerships@ousacademy.com">partnerships@ousacademy.com</a></p>
+        <div class="article-body">
+          <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
+          <h3 data-i18n="articles.a1.title">Common Mistakes Even Advanced Learners Still Make</h3>
+          <p data-i18n="articles.a1.body">The small grammar slips that persist long after the basics are mastered — and why they happen.</p>
         </div>
-      </div>
-      <div class="contact-info-item">
-        <div>
-          <h4 data-i18n="contact.info.hours.title">Response time</h4>
-          <p data-i18n="contact.info.hours.body">Within 48 hours, every day of the week.</p>
-        </div>
-      </div>
+      </article>
 
-      <div style="margin-top:44px;">
-        <h3 class="h-display h-sm" style="margin-bottom:20px;" data-i18n="contact.info.regionsTitle">Where we're active</h3>
-        <div class="regions" style="background:var(--line); border-color:var(--line);">
-          <div class="region-card" style="background:var(--paper);">
-            <h3 style="color:var(--ink);" data-i18n="home.reach.individuals.title">For individuals</h3>
-            <ul>
-              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.individuals.r1">Latin America</span></li>
-              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.individuals.r2">Turkey</span></li>
-              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.individuals.r3">The Middle East</span></li>
-            </ul>
-          </div>
-          <div class="region-card" style="background:var(--paper);">
-            <h3 style="color:var(--ink);" data-i18n="home.reach.institutions.title">For institutions</h3>
-            <ul>
-              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.institutions.r1">Universities across Africa</span></li>
-              <li><span class="region-dot" style="background:var(--brass);"></span><span style="color:#5c5a54;" data-i18n="home.reach.institutions.r2">Institutes across Asia</span></li>
-            </ul>
-          </div>
+      <article class="article-card" data-course-cat="vocabulary">
+        <div class="article-media">
+          <span class="course-level" data-i18n="articles.a2.tag">Vocabulary</span>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
         </div>
-      </div>
+        <div class="article-body">
+          <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
+          <h3 data-i18n="articles.a2.title">How to Actually Remember New Words</h3>
+          <p data-i18n="articles.a2.body">Why word lists alone don't work, and what the research says actually makes vocabulary stick.</p>
+        </div>
+      </article>
+
+      <article class="article-card" data-course-cat="study">
+        <div class="article-media">
+          <span class="course-level" data-i18n="articles.a3.tag">Study Habits</span>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div class="article-body">
+          <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
+          <h3 data-i18n="articles.a3.title">Building a Daily English Habit That Actually Sticks</h3>
+          <p data-i18n="articles.a3.body">Ten minutes a day, done consistently, beats an hour once a week. Here's how to make it automatic.</p>
+        </div>
+      </article>
+
+      <article class="article-card" data-course-cat="exam">
+        <div class="article-media">
+          <span class="course-level" data-i18n="articles.a4.tag">Exam Prep</span>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><path d="M4 19V6a2 2 0 0 1 2-2h12v14H6a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12"/></svg>
+        </div>
+        <div class="article-body">
+          <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
+          <h3 data-i18n="articles.a4.title">IELTS vs. TOEFL: Which Test Actually Fits You?</h3>
+          <p data-i18n="articles.a4.body">The real differences that matter for your goals — not just the format on paper.</p>
+        </div>
+      </article>
+
+      <article class="article-card" data-course-cat="culture">
+        <div class="article-media">
+          <span class="course-level" data-i18n="articles.a5.tag">Culture &amp; Language</span>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><path d="M12 3l8 4-8 4-8-4 8-4Zm-8 8l8 4 8-4M4 15v4M20 11v6"/></svg>
+        </div>
+        <div class="article-body">
+          <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
+          <h3 data-i18n="articles.a5.title">Idioms That Don't Translate — And What They Really Mean</h3>
+          <p data-i18n="articles.a5.body">Why "it's raining cats and dogs" makes no sense literally, and how to stop translating word-for-word.</p>
+        </div>
+      </article>
+
+      <article class="article-card" data-course-cat="study">
+        <div class="article-media">
+          <span class="course-level" data-i18n="articles.a6.tag">For Institutions</span>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 10h16M10 10v10"/></svg>
+        </div>
+        <div class="article-body">
+          <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
+          <h3 data-i18n="articles.a6.title">Bringing Structured English Programs to Your Campus</h3>
+          <p data-i18n="articles.a6.body">What universities and institutes should look for before adopting any English program at scale.</p>
+        </div>
+      </article>
+
     </div>
+  </div>
+</section>
 
+<section class="cta-banner">
+  <div class="container">
+    <span class="eyebrow" data-reveal data-i18n="articles.cta.eyebrow">More on the way</span>
+    <h2 class="h-display h-lg on-dark" data-reveal style="margin-top:16px;" data-i18n="articles.cta.title">Want new articles in your inbox the day they publish?</h2>
+    <div class="btn-row" data-reveal>
+      <a href="contact.html" class="btn btn-on-dark" data-i18n="articles.cta.primary">Get Notified</a>
+      <a href="programs.html" class="btn btn-ghost-dark" data-i18n="articles.cta.secondary">See What's Coming</a>
+    </div>
   </div>
 </section>
 
@@ -166,6 +174,7 @@
         <ul>
           <li><a href="index.html" data-i18n="nav.home">Home</a></li>
           <li><a href="programs.html" data-i18n="nav.programs">Programs</a></li>
+          <li><a href="articles.html" data-i18n="nav.articles">Articles</a></li>
           <li><a href="about.html" data-i18n="nav.about">About</a></li>
           <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>

@@ -6,16 +6,25 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow">
-<title>OUS Academy — English, Simplified</title>
+<title>OUS Academy — Universal Language</title>
 <meta name="description" content="OUS Academy brings world-class English learning tools to everyone — Fluido, OUS References, and OUS Test — a bridge from simplicity to mastery, without the elite price tag.">
 <link rel="icon" href="assets/img/badge.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
-<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- ============ HONOR RIBBON ============ -->
+<div class="honor-ribbon">
+  <div class="container honor-ribbon-inner">
+    <span class="honor-name" lang="ar">محمد</span>
+    <span class="honor-peace" aria-hidden="true">ﷺ</span>
+    <span class="honor-divider">—</span>
+    <span class="honor-text" data-i18n="home.honor.text">Our leader and our role model</span>
+  </div>
+</div>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header">
@@ -27,6 +36,18 @@
     <nav class="nav" aria-label="Primary">
       <a href="index.html" data-page="home" data-i18n="nav.home">Home</a>
       <a href="programs.html" data-page="programs" data-i18n="nav.programs">Programs</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <span data-i18n="nav.books">OUS Books</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="programs.html#references" data-i18n="nav.booksMenu.references">Major References</a>
+          <a href="programs.html#books" data-i18n="nav.booksMenu.guides">Guides &amp; Books</a>
+          <a href="programs.html#voca-builder" data-i18n="nav.booksMenu.free">Free Library</a>
+        </div>
+      </div>
+      <a href="articles.html" data-page="articles" data-i18n="nav.articles">Articles</a>
       <a href="about.html" data-page="about" data-i18n="nav.about">About</a>
       <a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a>
       <a href="contact.html" class="btn btn-on-dark nav-cta-mobile" data-i18n="nav.cta">Join the Waitlist</a>
@@ -46,9 +67,9 @@
 <section class="hero">
   <div class="hero-stars"></div>
   <div class="container hero-inner">
-    <img src="assets/img/badge.svg" alt="" class="hero-crest" data-reveal>
+    <img src="assets/img/seal.svg" alt="" class="hero-crest" data-reveal>
     <span class="eyebrow" data-reveal data-i18n="home.hero.eyebrow">Est. for the many, not the few</span>
-    <h1 class="h-display h-xl on-dark" data-reveal style="margin-top:20px;" data-i18n="home.hero.title">English, Simplified.</h1>
+    <h1 class="h-display h-xl on-dark" data-reveal style="margin-top:20px;" data-i18n="home.hero.title">Universal Language.</h1>
     <p class="lede on-dark" data-reveal data-i18n="home.hero.sub">World-class English learning tools, rebuilt from the ground up so mastery is a matter of practice — not privilege.</p>
     <div class="hero-cta" data-reveal>
       <a href="programs.html" class="btn btn-on-dark" data-i18n="home.hero.ctaPrimary">See What's Coming</a>
@@ -145,6 +166,36 @@
   </div>
 </section>
 
+<!-- ============ FEATURED (advertisement slot) ============ -->
+<section class="section-tight ad-showcase">
+  <div class="container">
+    <div class="ad-showcase-head" data-reveal>
+      <span class="ad-label" data-i18n="home.ads.label">Advertisement</span>
+      <span class="eyebrow" data-i18n="home.ads.eyebrow">Featured</span>
+    </div>
+    <div class="ad-grid" data-reveal>
+      <div class="ad-card" aria-label="Athar Eau de Parfum by OUS">
+        <div class="ad-card-media">
+          <img src="assets/img/ads/athar-bottle.jpg" alt="أثر — Athar Eau de Parfum" loading="lazy">
+        </div>
+        <div class="ad-card-body">
+          <span class="ad-card-name" lang="ar">أثر <span class="ad-card-name-en">Athar</span></span>
+          <span class="ad-card-tagline" data-i18n="home.ads.athar">A fresh, luminous eau de parfum — by OUS</span>
+        </div>
+      </div>
+      <div class="ad-card" aria-label="Hajar Eau de Parfum by Stylish Store">
+        <div class="ad-card-media">
+          <img src="assets/img/ads/hajar-bottle.jpg" alt="حجر — Hajar Eau de Parfum" loading="lazy">
+        </div>
+        <div class="ad-card-body">
+          <span class="ad-card-name" lang="ar">حَجر <span class="ad-card-name-en">Hajar</span></span>
+          <span class="ad-card-tagline" data-i18n="home.ads.hajar">A bold, grounded evening scent — by Stylish Store</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ GLOBAL REACH ============ -->
 <section class="section section-dark">
   <div class="container">
@@ -200,7 +251,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <img src="assets/img/seal.svg" alt="OUS Academy" class="brand-mark">
-        <p data-i18n="footer.tagline">OUS Academy — English, Simplified. World-class learning tools, built for everyone.</p>
+        <p data-i18n="footer.tagline">OUS Academy — Universal Language. World-class learning tools, built for everyone.</p>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer.explore">Explore</h4>
