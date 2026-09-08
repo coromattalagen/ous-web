@@ -32,6 +32,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
+  /* ---- nav dropdown (e.g. OUS Books) ---- */
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(dd => {
+    const trigger = dd.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dd.classList.contains('is-open');
+      dropdowns.forEach(other => { other.classList.remove('is-open'); other.querySelector('.nav-dropdown-trigger')?.setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) {
+        dd.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  document.addEventListener('click', (e) => {
+    dropdowns.forEach(dd => {
+      if (!dd.contains(e.target)) {
+        dd.classList.remove('is-open');
+        dd.querySelector('.nav-dropdown-trigger')?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdowns.forEach(dd => {
+        dd.classList.remove('is-open');
+        dd.querySelector('.nav-dropdown-trigger')?.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
   /* ---- active nav link ---- */
   const page = document.body.getAttribute('data-page');
   if (page) {
@@ -149,19 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  }
-
-  /* ---- scroll progress bar ---- */
-  const scrollProgress = document.querySelector('.scroll-progress');
-  if (scrollProgress) {
-    const updateProgress = () => {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-      scrollProgress.style.width = pct + '%';
-    };
-    updateProgress();
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    window.addEventListener('resize', updateProgress, { passive: true });
   }
 
   /* ---- card tilt micro-interaction (desktop pointer devices only) ---- */

@@ -13,19 +13,25 @@ en: {
     explore:"Explore All Volumes",
     dismiss:"Maybe later"
   },
-  nav: { home:"Home", programs:"Programs", about:"About", contact:"Contact", cta:"Join the Waitlist" },
+  nav: {
+    home:"Home", programs:"Programs", about:"About", contact:"Contact", cta:"Join the Waitlist",
+    books:"OUS Books", articles:"Articles",
+    booksMenu:{ references:"Major References", guides:"Guides & Books", free:"Free Library" }
+  },
   common:{ comingSoon:"Coming Soon" },
 
   footer: {
-    tagline:"OUS Academy — English, Simplified. World-class learning tools, built for everyone.",
+    tagline:"OUS Academy — Universal Language. World-class learning tools, built for everyone.",
     explore:"Explore", programs:"Coming Soon", contactHead:"Get in touch",
     contactLink:"Contact form", rights:"© {year} OUS Academy. All rights reserved."
   },
 
   home: {
+    honor:{ text:"Our leader and our role model" },
+    ads:{ label:"Advertisement", eyebrow:"Featured", athar:"A fresh, luminous eau de parfum — by OUS", hajar:"A bold, grounded evening scent — by Stylish Store" },
     hero: {
       eyebrow:"Est. for the many, not the few",
-      title:"English, Simplified.",
+      title:"Universal Language.",
       sub:"World-class English learning tools, rebuilt from the ground up so mastery is a matter of practice — not privilege.",
       ctaPrimary:"See What's Coming", ctaSecondary:"Our Story"
     },
@@ -149,6 +155,18 @@ en: {
     cta:{ eyebrow:"Join the learners", title:"Come learn with people who are going exactly where you are.", secondary:"Get in Touch" }
   },
 
+  articles:{
+    hero:{ eyebrow:"OUS Articles", title:"Practical writing on learning English, well.", sub:"Short, useful pieces on grammar, vocabulary, study habits, and exam prep — no filler, written by the team building OUS Academy's tools." },
+    filters:{ all:"All Topics", grammar:"Grammar", vocabulary:"Vocabulary", study:"Study Habits", exam:"Exam Prep", culture:"Culture & Language" },
+    a1:{ tag:"Grammar", title:"Common Mistakes Even Advanced Learners Still Make", body:"The small grammar slips that persist long after the basics are mastered — and why they happen." },
+    a2:{ tag:"Vocabulary", title:"How to Actually Remember New Words", body:"Why word lists alone don't work, and what the research says actually makes vocabulary stick." },
+    a3:{ tag:"Study Habits", title:"Building a Daily English Habit That Actually Sticks", body:"Ten minutes a day, done consistently, beats an hour once a week. Here's how to make it automatic." },
+    a4:{ tag:"Exam Prep", title:"IELTS vs. TOEFL: Which Test Actually Fits You?", body:"The real differences that matter for your goals — not just the format on paper." },
+    a5:{ tag:"Culture & Language", title:"Idioms That Don't Translate — And What They Really Mean", body:"Why \"it's raining cats and dogs\" makes no sense literally, and how to stop translating word-for-word." },
+    a6:{ tag:"For Institutions", title:"Bringing Structured English Programs to Your Campus", body:"What universities and institutes should look for before adopting any English program at scale." },
+    cta:{ eyebrow:"More on the way", title:"Want new articles in your inbox the day they publish?", primary:"Get Notified", secondary:"See What's Coming" }
+  },
+
   contact: {
     hero:{ eyebrow:"Get in touch", title:"Let's find your starting point.", sub:"Whether you're one learner or a whole institution, someone on our team will reply within 48 hours." },
     form:{
@@ -178,19 +196,25 @@ ar: {
     explore:"استكشف كل المجلدات",
     dismiss:"لاحقاً"
   },
-  nav: { home:"الرئيسية", programs:"البرامج", about:"عن الأكاديمية", contact:"تواصل", cta:"انضم لقائمة الانتظار" },
+  nav: {
+    home:"الرئيسية", programs:"البرامج", about:"عن الأكاديمية", contact:"تواصل", cta:"انضم لقائمة الانتظار",
+    books:"كتب أوس", articles:"مقالات",
+    booksMenu:{ references:"مراجع كبرى", guides:"دلائل وكتب", free:"مكتبة مجانية" }
+  },
   common:{ comingSoon:"قريباً" },
 
   footer: {
-    tagline:"أكاديمية أوس — English, Simplified. أدوات تعليمية عالمية المستوى، لكل الناس.",
+    tagline:"أكاديمية أوس — Universal Language. أدوات تعليمية عالمية المستوى، لكل الناس.",
     explore:"استكشف", programs:"قريباً", contactHead:"تواصل معنا",
     contactLink:"نموذج التواصل", rights:"© {year} أكاديمية أوس. جميع الحقوق محفوظة."
   },
 
   home: {
+    honor:{ text:"قائدنا وقدوتنا" },
+    ads:{ label:"إعلان", eyebrow:"مميز", athar:"عطر منعش ومشرق — من أوس", hajar:"عطر مسائي جريء وثابت — من Stylish Store" },
     hero: {
       eyebrow:"تأسست للجميع، لا للنخبة",
-      title:"English, Simplified.",
+      title:"Universal Language.",
       sub:"أدوات تعليمية إنجليزية عالمية المستوى، أُعيد بناؤها من الصفر ليكون الإتقان مسألة تدريب لا امتياز.",
       ctaPrimary:"شاهد ما سيتوفر قريباً", ctaSecondary:"قصتنا"
     },
@@ -311,6 +335,18 @@ ar: {
       m4:{name:"اسم المستشار", role:"الشراكات"}
     },
     cta:{ eyebrow:"انضم إلى المتعلمين", title:"تعلّم مع أشخاص يسيرون بالضبط نحو الوجهة التي تسير إليها.", secondary:"تواصل معنا" }
+  },
+
+  articles:{
+    hero:{ eyebrow:"مقالات أوس", title:"كتابة عملية حول تعلّم الإنجليزية، بالطريقة الصحيحة.", sub:"مقالات قصيرة ومفيدة عن القواعد والمفردات وعادات الدراسة والتحضير للاختبارات — دون حشو، يكتبها الفريق الذي يبني أدوات أكاديمية أوس." },
+    filters:{ all:"كل المواضيع", grammar:"القواعد", vocabulary:"المفردات", study:"عادات الدراسة", exam:"التحضير للاختبارات", culture:"الثقافة واللغة" },
+    a1:{ tag:"القواعد", title:"أخطاء شائعة ما زال يقع فيها حتى المتعلمون المتقدمون", body:"الزلات النحوية الصغيرة التي تبقى بعد إتقان الأساسيات بوقت طويل — ولماذا تحدث." },
+    a2:{ tag:"المفردات", title:"كيف تتذكر الكلمات الجديدة فعلاً", body:"لماذا لا تنفع قوائم الكلمات وحدها، وما الذي يجعل المفردات تثبت في الذاكرة فعلياً وفق الأبحاث." },
+    a3:{ tag:"عادات الدراسة", title:"بناء عادة يومية للإنجليزية تدوم فعلاً", body:"عشر دقائق يومياً بانتظام أفضل من ساعة مرة واحدة أسبوعياً. إليك كيف تجعلها تلقائية." },
+    a4:{ tag:"التحضير للاختبارات", title:"IELTS مقابل TOEFL: أيهما يناسبك فعلاً؟", body:"الفروقات الحقيقية المهمة لأهدافك — لا مجرد شكل الاختبار على الورق." },
+    a5:{ tag:"الثقافة واللغة", title:"تعابير اصطلاحية لا تُترجم حرفياً — وماذا تعني فعلاً", body:"لماذا لا معنى لعبارة \"It's raining cats and dogs\" حرفياً، وكيف تتوقف عن الترجمة كلمة بكلمة." },
+    a6:{ tag:"للمؤسسات", title:"جلب برامج إنجليزية منظمة إلى حرمكم الجامعي", body:"ما الذي يجب أن تبحث عنه الجامعات والمعاهد قبل تبني أي برنامج إنجليزي على نطاق واسع." },
+    cta:{ eyebrow:"المزيد قادم", title:"تريد استلام المقالات الجديدة فور نشرها؟", primary:"أشعرني عند النشر", secondary:"شاهد ما سيتوفر قريباً" }
   },
 
   contact: {
