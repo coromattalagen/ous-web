@@ -13,23 +13,30 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* ---- mobile nav ---- */
+  /* ---- mobile nav (professional full-screen overlay) ---- */
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   if (navToggle && nav) {
-    navToggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (open) {
-        nav.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:0;inset-inline:0;bottom:0;background:#1B1A18;padding:120px 40px 40px;gap:28px;z-index:99;';
-      } else {
-        nav.style.cssText = '';
-      }
-    });
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    const closeMobileNav = () => {
       nav.classList.remove('is-open');
-      nav.style.cssText = '';
-    }));
+      navToggle.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    };
+    const openMobileNav = () => {
+      nav.classList.add('is-open');
+      navToggle.classList.add('is-open');
+      navToggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('nav-open');
+    };
+    navToggle.addEventListener('click', () => {
+      if (nav.classList.contains('is-open')) closeMobileNav();
+      else openMobileNav();
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) closeMobileNav();
+    });
   }
 
   /* ---- nav dropdown (e.g. OUS Books) ---- */
