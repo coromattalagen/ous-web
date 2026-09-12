@@ -36,7 +36,17 @@
     <nav class="nav" aria-label="Primary">
       <a href="index.html" data-page="home" data-i18n="nav.home">Home</a>
       <a href="programs.html" data-page="programs" data-i18n="nav.programs">Programs</a>
-      <a href="books.html" data-page="books" data-i18n="nav.books">OUS Books</a>
+      <div class="nav-dropdown">
+        <a href="books.html" data-page="books" class="nav-dropdown-link" data-i18n="nav.books">OUS Books</a>
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Show OUS Books categories">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="books.html#references" data-i18n="nav.booksMenu.references">Major References</a>
+          <a href="books.html#guides" data-i18n="nav.booksMenu.guides">Guides &amp; Books</a>
+          <a href="books.html#voca-builder" data-i18n="nav.booksMenu.free">Free Library</a>
+        </div>
+      </div>
       <a href="articles.html" data-page="articles" data-i18n="nav.articles">Articles</a>
       <a href="about.html" data-page="about" data-i18n="nav.about">About</a>
       <a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a>
@@ -46,8 +56,6 @@
       <div class="lang-toggle" role="group" aria-label="Language">
         <button type="button" data-lang="en" class="is-active">EN</button>
         <button type="button" data-lang="ar">AR</button>
-        <button type="button" data-lang="tr">TR</button>
-        <button type="button" data-lang="id">ID</button>
       </div>
       <a href="contact.html" class="btn btn-on-dark" data-i18n="nav.cta">Join the Waitlist</a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -138,14 +146,14 @@
         <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
         <h3 data-i18n="home.offers.o2.title">OUS References</h3>
         <p data-i18n="home.offers.o2.body">Major language references — OUS Grammar, OUS Writing, OUS Vocabulary, and more.</p>
-        <a href="books.html#categories" class="course-link" data-i18n="home.offers.link">Learn more <span class="btn-arrow">→</span></a>
+        <a href="books.html#references" class="course-link" data-i18n="home.offers.link">Learn more <span class="btn-arrow">→</span></a>
       </div>
       <div class="offer-card">
         <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="1.1"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v16H6.5A2.5 2.5 0 0 0 4 20.5v-16Z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20"/></svg>
         <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
         <h3 data-i18n="home.offers.o3.title">Books &amp; Guides</h3>
         <p data-i18n="home.offers.o3.body">Focused guides for learning English across different fields, industries, and everyday life.</p>
-        <a href="books.html" class="course-link" data-i18n="home.offers.link">Learn more <span class="btn-arrow">→</span></a>
+        <a href="books.html#guides" class="course-link" data-i18n="home.offers.link">Learn more <span class="btn-arrow">→</span></a>
       </div>
       <div class="offer-card">
         <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="1.1"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
@@ -158,33 +166,38 @@
   </div>
 </section>
 
-<!-- ============ FEATURED (advertisement slot) ============ -->
-<section class="section-tight ad-showcase">
+<!-- ============ FEATURED PLACEMENT (premium ad slot) ============ -->
+<section class="section vitrine">
   <div class="container">
-    <div class="ad-showcase-head" data-reveal>
+    <div class="vitrine-head" data-reveal>
       <span class="ad-label" data-i18n="home.ads.label">Advertisement</span>
-      <span class="eyebrow" data-i18n="home.ads.eyebrow">Featured</span>
+      <span class="eyebrow on-dark" data-i18n="home.ads.eyebrow">Featured Placement</span>
+      <h2 class="h-display h-md on-dark" data-i18n="home.ads.title">A small, curated space — reserved for one thing at a time.</h2>
     </div>
-    <div class="ad-grid" data-reveal>
-      <div class="ad-card" aria-label="Athar Eau de Parfum by OUS">
-        <div class="ad-card-media">
+    <div class="vitrine-grid" data-reveal>
+      <div class="vitrine-item">
+        <div class="vitrine-media">
           <img src="assets/img/ads/athar-bottle.jpg" alt="أثر — Athar Eau de Parfum" loading="lazy">
         </div>
-        <div class="ad-card-body">
-          <span class="ad-card-name" lang="ar">أثر <span class="ad-card-name-en">Athar</span></span>
-          <span class="ad-card-tagline" data-i18n="home.ads.athar">A fresh, luminous eau de parfum — by OUS</span>
+        <div class="vitrine-caption">
+          <span class="vitrine-name" lang="ar">أثر <span class="vitrine-name-en">Athar</span></span>
+          <span class="vitrine-tagline" data-i18n="home.ads.athar">A fresh, luminous eau de parfum — by OUS</span>
         </div>
       </div>
-      <div class="ad-card" aria-label="Hajar Eau de Parfum by Stylish Store">
-        <div class="ad-card-media">
+      <div class="vitrine-item">
+        <div class="vitrine-media">
           <img src="assets/img/ads/hajar-bottle.jpg" alt="حجر — Hajar Eau de Parfum" loading="lazy">
         </div>
-        <div class="ad-card-body">
-          <span class="ad-card-name" lang="ar">حَجر <span class="ad-card-name-en">Hajar</span></span>
-          <span class="ad-card-tagline" data-i18n="home.ads.hajar">A bold, grounded evening scent — by Stylish Store</span>
+        <div class="vitrine-caption">
+          <span class="vitrine-name" lang="ar">حَجر <span class="vitrine-name-en">Hajar</span></span>
+          <span class="vitrine-tagline" data-i18n="home.ads.hajar">A bold, grounded evening scent — by Stylish Store</span>
         </div>
       </div>
     </div>
+    <p class="vitrine-footer" data-reveal>
+      <span data-i18n="home.ads.reserve">This placement is limited to a small number of features at a time.</span>
+      <a href="contact.html" data-i18n="home.ads.reserveCta">Inquire about featuring here →</a>
+    </p>
   </div>
 </section>
 
@@ -258,7 +271,7 @@
         <h4 data-i18n="footer.programs">Coming Soon</h4>
         <ul>
           <li><a href="programs.html#fluido" data-i18n="home.offers.o1.title">Fluido</a></li>
-          <li><a href="books.html#categories" data-i18n="home.offers.o2.title">OUS References</a></li>
+          <li><a href="books.html#references" data-i18n="home.offers.o2.title">OUS References</a></li>
           <li><a href="programs.html#test" data-i18n="home.offers.o4.title">OUS Test</a></li>
         </ul>
       </div>
@@ -303,7 +316,7 @@
       <p id="announceDesc" class="lede" data-i18n="announce.body">Four volumes, 500 words each — 2,000 words total. A practical vocabulary workbook, not just a list. Built for levels A1–B2.</p>
       <div class="announce-actions">
         <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="btn btn-primary" id="announceDownload" download data-i18n="announce.download">Download Free</a>
-        <a href="books.html#free-library" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
+        <a href="books.html#voca-builder" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
       </div>
       <button type="button" class="announce-dismiss" id="announceDismiss" data-i18n="announce.dismiss">Maybe later</button>
     </div>

@@ -7,7 +7,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow">
 <title>OUS Books — OUS Academy</title>
-<meta name="description" content="OUS Books: practical vocabulary workbooks, focused guides, and major references. Browse by category, search, and download free resources from OUS Academy.">
+<meta name="description" content="Major references, focused guides, and a free vocabulary library — the OUS Books catalog. Search or filter by category to find exactly what you need.">
 <link rel="icon" href="assets/img/badge.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,17 @@
     <nav class="nav" aria-label="Primary">
       <a href="index.html" data-page="home" data-i18n="nav.home">Home</a>
       <a href="programs.html" data-page="programs" data-i18n="nav.programs">Programs</a>
-      <a href="books.html" data-page="books" data-i18n="nav.books">OUS Books</a>
+      <div class="nav-dropdown">
+        <a href="books.html" data-page="books" class="nav-dropdown-link" data-i18n="nav.books">OUS Books</a>
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Show OUS Books categories">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="books.html#references" data-i18n="nav.booksMenu.references">Major References</a>
+          <a href="books.html#guides" data-i18n="nav.booksMenu.guides">Guides &amp; Books</a>
+          <a href="books.html#voca-builder" data-i18n="nav.booksMenu.free">Free Library</a>
+        </div>
+      </div>
       <a href="articles.html" data-page="articles" data-i18n="nav.articles">Articles</a>
       <a href="about.html" data-page="about" data-i18n="nav.about">About</a>
       <a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a>
@@ -35,8 +45,6 @@
       <div class="lang-toggle" role="group" aria-label="Language">
         <button type="button" data-lang="en" class="is-active">EN</button>
         <button type="button" data-lang="ar">AR</button>
-        <button type="button" data-lang="tr">TR</button>
-        <button type="button" data-lang="id">ID</button>
       </div>
       <a href="contact.html" class="btn btn-on-dark" data-i18n="nav.cta">Join the Waitlist</a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -44,139 +52,168 @@
   </div>
 </header>
 
-<section class="page-hero page-hero-photo">
+<section class="page-hero">
   <div class="hero-stars"></div>
   <div class="container" style="position:relative;z-index:2;">
     <span class="eyebrow" data-i18n="books.hero.eyebrow">OUS Books</span>
-    <h1 class="h-display h-lg on-dark" data-i18n="books.hero.title">Practical books for the English you actually need.</h1>
-    <p class="lede on-dark" style="margin:18px auto 0;" data-i18n="books.hero.sub">Focused workbooks, guides, and references — organized so you can find exactly the right resource for your level and goals.</p>
+    <h1 class="h-display h-lg on-dark" data-i18n="books.hero.title">Every reference, guide, and free download — in one catalog.</h1>
+    <p class="lede on-dark" style="margin:18px auto 0;" data-i18n="books.hero.sub">Search by name or filter by category. This catalog will keep growing — search and filtering are built in from day one so it stays easy to navigate.</p>
     <p class="breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a> / <span data-i18n="nav.books">OUS Books</span></p>
   </div>
 </section>
 
-<!-- Search + Filters (future-ready store structure) -->
-<section class="section-tight" style="padding-bottom:0;">
+<!-- ============ CATALOG SEARCH + FILTER ============ -->
+<section class="section-tight">
   <div class="container">
-    <div class="books-toolbar" data-reveal>
-      <div class="books-search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
-        <input type="search" id="bookSearch" placeholder="Search books by name or topic..." data-i18n-placeholder="books.search.placeholder" aria-label="Search books">
+    <div class="catalog-toolbar" data-reveal>
+      <div class="catalog-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="bookSearch" data-i18n-placeholder="books.search.placeholder" placeholder="Search by title — e.g. Grammar, Vocabulary…" autocomplete="off">
       </div>
-      <div class="books-filters" role="group" aria-label="Filter by category">
-        <button type="button" class="filter-btn is-active" data-filter="all" data-i18n="books.filters.all">All</button>
-        <button type="button" class="filter-btn" data-filter="free" data-i18n="books.filters.free">Free Library</button>
-        <button type="button" class="filter-btn" data-filter="vocabulary" data-i18n="books.filters.vocabulary">Vocabulary</button>
-        <button type="button" class="filter-btn" data-filter="guides" data-i18n="books.filters.guides">Guides</button>
-        <button type="button" class="filter-btn" data-filter="references" data-i18n="books.filters.references">References</button>
+      <div class="filters catalog-filters">
+        <button class="filter-btn is-active" data-filter="all" data-i18n="books.filters.all">All Items</button>
+        <button class="filter-btn" data-filter="references" data-i18n="books.filters.references">Major References</button>
+        <button class="filter-btn" data-filter="guides" data-i18n="books.filters.guides">Guides &amp; Books</button>
+        <button class="filter-btn" data-filter="free" data-i18n="books.filters.free">Free Library</button>
+      </div>
+    </div>
+    <p class="catalog-empty" id="catalogEmpty" hidden data-i18n="books.search.empty">No titles match your search yet — try a different word, or check back as the catalog grows.</p>
+  </div>
+</section>
+
+<!-- ============ MAJOR REFERENCES ============ -->
+<section class="section section-parchment" id="references">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="badge-soon on-light" style="margin-bottom:16px;"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
+      <h2 class="h-display h-lg" data-i18n="programs.refs.title">The OUS Reference Library.</h2>
+      <p class="lede" style="margin:16px auto 0;" data-i18n="programs.refs.sub">Major, authoritative references — the kind you keep coming back to, not the kind you finish once.</p>
+    </div>
+    <div class="ref-grid" data-reveal>
+      <div class="ref-card catalog-item" data-cat="references" data-name="OUS Grammar">
+        <h3 data-i18n="programs.refs.r1.title">OUS Grammar</h3>
+        <p data-i18n="programs.refs.r1.body">A complete, plain-language reference to how English actually works.</p>
+      </div>
+      <div class="ref-card catalog-item" data-cat="references" data-name="OUS Writing">
+        <h3 data-i18n="programs.refs.r2.title">OUS Writing</h3>
+        <p data-i18n="programs.refs.r2.body">From a clear sentence to a polished email, essay, or report.</p>
+      </div>
+      <div class="ref-card catalog-item" data-cat="references" data-name="OUS Vocabulary">
+        <h3 data-i18n="programs.refs.r3.title">OUS Vocabulary</h3>
+        <p data-i18n="programs.refs.r3.body">Words organized the way your brain actually remembers them — by use, not alphabet.</p>
+      </div>
+      <div class="ref-card catalog-item" data-cat="references" data-name="OUS Pronunciation">
+        <h3 data-i18n="programs.refs.r4.title">OUS Pronunciation</h3>
+        <p data-i18n="programs.refs.r4.body">Sound, rhythm, and stress — the parts of English that textbooks usually skip.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Free Library: Voca Builder -->
-<section class="section" id="free-library">
+<!-- ============ GUIDES & BOOKS ============ -->
+<section class="section" id="guides">
   <div class="container">
     <div class="section-head" data-reveal>
-      <span class="eyebrow" data-i18n="books.voca.badge">Free — Available Now</span>
-      <h2 class="h-display h-lg" data-i18n="books.voca.title">OUS Voca Builder — New Generation</h2>
-      <p class="lede" style="margin-top:16px; max-width:none;" data-i18n="books.voca.body">A practical vocabulary workbook released in four volumes — 500 essential words per volume, 2,000 across the complete set. Built to be used, not just read.</p>
+      <span class="badge-soon on-light" style="margin-bottom:16px;"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
+      <h2 class="h-display h-lg" data-i18n="programs.books.title">Books and guides, for the English you actually need.</h2>
+      <p class="lede" style="margin-top:16px; max-width:none;" data-i18n="programs.books.sub">Focused guides across different fields and situations — not one generic textbook trying to cover everything.</p>
     </div>
-
-    <div class="voca-grid" data-reveal>
-      <div class="book-card" data-cat="free vocabulary">
-        <div class="book-cover">
-          <img src="assets/img/books/voca-builder-vol1.jpg" alt="OUS Voca Builder Volume 1" loading="lazy">
-        </div>
-        <div class="book-info">
-          <span class="book-tag">A1–A2</span>
-          <h3 data-i18n="books.voca.vol1">Volume 1</h3>
-          <p data-i18n="books.voca.vol1desc">Essential everyday vocabulary for absolute beginners and elementary learners.</p>
-          <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="btn btn-primary" download data-i18n="books.voca.cta">Download Free</a>
-        </div>
+    <div class="book-grid" data-reveal>
+      <div class="book-card catalog-item" data-cat="guides" data-name="Business &amp; Career">
+        <div class="book-cover"></div>
+        <h4 data-i18n="programs.books.b1.title">Business &amp; Career</h4>
+        <p data-i18n="programs.books.b1.body">Emails, meetings, interviews.</p>
       </div>
-      <div class="book-card" data-cat="free vocabulary">
-        <div class="book-cover">
-          <img src="assets/img/books/voca-builder-vol2.jpg" alt="OUS Voca Builder Volume 2" loading="lazy">
-        </div>
-        <div class="book-info">
-          <span class="book-tag">A2–B1</span>
-          <h3 data-i18n="books.voca.vol2">Volume 2</h3>
-          <p data-i18n="books.voca.vol2desc">Building core vocabulary for work, study, and daily conversations.</p>
-          <a href="#" class="btn btn-ghost" data-i18n="common.comingSoon">Coming Soon</a>
-        </div>
+      <div class="book-card catalog-item" data-cat="guides" data-name="Academic English">
+        <div class="book-cover"></div>
+        <h4 data-i18n="programs.books.b2.title">Academic English</h4>
+        <p data-i18n="programs.books.b2.body">Essays, research, and university life.</p>
       </div>
-      <div class="book-card" data-cat="free vocabulary">
-        <div class="book-cover">
-          <img src="assets/img/books/voca-builder-vol3.jpg" alt="OUS Voca Builder Volume 3" loading="lazy">
-        </div>
-        <div class="book-info">
-          <span class="book-tag">B1</span>
-          <h3 data-i18n="books.voca.vol3">Volume 3</h3>
-          <p data-i18n="books.voca.vol3desc">Intermediate vocabulary for clearer expression and understanding.</p>
-          <a href="#" class="btn btn-ghost" data-i18n="common.comingSoon">Coming Soon</a>
-        </div>
+      <div class="book-card catalog-item" data-cat="guides" data-name="Travel &amp; Everyday Life">
+        <div class="book-cover"></div>
+        <h4 data-i18n="programs.books.b3.title">Travel &amp; Everyday Life</h4>
+        <p data-i18n="programs.books.b3.body">The English you'll actually use day to day.</p>
       </div>
-      <div class="book-card" data-cat="free vocabulary">
-        <div class="book-cover">
-          <img src="assets/img/books/voca-builder-vol4.jpg" alt="OUS Voca Builder Volume 4" loading="lazy">
-        </div>
-        <div class="book-info">
-          <span class="book-tag">B1–B2</span>
-          <h3 data-i18n="books.voca.vol4">Volume 4</h3>
-          <p data-i18n="books.voca.vol4desc">Upper-intermediate words that unlock more natural, confident English.</p>
-          <a href="#" class="btn btn-ghost" data-i18n="common.comingSoon">Coming Soon</a>
-        </div>
+      <div class="book-card catalog-item" data-cat="guides" data-name="Specialized Fields">
+        <div class="book-cover"></div>
+        <h4 data-i18n="programs.books.b4.title">Specialized Fields</h4>
+        <p data-i18n="programs.books.b4.body">Medicine, tech, hospitality, and more.</p>
       </div>
     </div>
   </div>
 </section>
 
-<hr class="rule">
-
-<!-- Future categories (store-ready) -->
-<section class="section" id="categories">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow" data-i18n="books.cats.eyebrow">Coming categories</span>
-      <h2 class="h-display h-lg" data-i18n="books.cats.title">More books are on the way.</h2>
-      <p class="lede" style="margin-top:16px; max-width:none;" data-i18n="books.cats.sub">We are building focused guides across real-life situations. Each category will grow into its own collection.</p>
+<!-- ============ FEATURED FREE RESOURCE: OUS VOCA BUILDER ============ -->
+<section class="section section-parchment catalog-item" id="voca-builder" data-cat="free" data-name="OUS Voca Builder">
+  <div class="container voca-showcase">
+    <div class="voca-fan" data-reveal>
+      <div class="voca-fan-item"><img src="assets/img/books/voca-builder-vol1.jpg" alt="OUS Voca Builder — Volume 1 cover" loading="lazy"></div>
+      <div class="voca-fan-item"><img src="assets/img/books/voca-builder-vol2.jpg" alt="OUS Voca Builder — Volume 2 cover" loading="lazy"></div>
+      <div class="voca-fan-item"><img src="assets/img/books/voca-builder-vol3.jpg" alt="OUS Voca Builder — Volume 3 cover" loading="lazy"></div>
+      <div class="voca-fan-item"><img src="assets/img/books/voca-builder-vol4.jpg" alt="OUS Voca Builder — Volume 4 cover" loading="lazy"></div>
     </div>
-    <div class="course-grid" data-reveal>
-      <div class="course-card" data-cat="guides">
-        <span class="course-level" data-i18n="books.cats.b1.tag">Guides</span>
-        <h3 data-i18n="books.cats.b1.title">Business & Career</h3>
-        <p data-i18n="books.cats.b1.body">Emails, meetings, interviews, and professional communication.</p>
-        <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
+    <div data-reveal>
+      <span class="badge-free">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <span data-i18n="programs.voca.badge">Free — Available Now</span>
+      </span>
+      <h2 class="h-display h-lg" style="margin-top:18px;" data-i18n="programs.voca.title">OUS Voca Builder — New Generation</h2>
+      <p class="lede" style="margin-top:14px; max-width:none;" data-i18n="programs.voca.body">A practical vocabulary workbook released in four volumes — 500 essential words per volume, 2,000 across the complete set. Built to be used, not just read.</p>
+
+      <ul class="voca-features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span data-i18n="programs.voca.f1">500 words per volume — 2,000 across all four, organized by real-world use</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span data-i18n="programs.voca.f2">Workbook format with practical exercises, not just word lists</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span data-i18n="programs.voca.f3">Levels A1–B2 — built for real beginners through solid intermediate learners</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span data-i18n="programs.voca.f4">Completely free — no account, no catch</span>
+        </li>
+      </ul>
+
+      <div class="voca-volumes">
+        <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="voca-volume-pill" download>
+          <span class="voca-volume-swatch" style="background:#F2A649;"></span>
+          <span data-i18n="programs.voca.vol1">Volume 1</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        </a>
+        <a href="assets/downloads/ous-voca-builder-vol2.pdf" class="voca-volume-pill" download>
+          <span class="voca-volume-swatch" style="background:#5FC9C0;"></span>
+          <span data-i18n="programs.voca.vol2">Volume 2</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        </a>
+        <a href="assets/downloads/ous-voca-builder-vol3.pdf" class="voca-volume-pill" download>
+          <span class="voca-volume-swatch" style="background:#8B6BD6;"></span>
+          <span data-i18n="programs.voca.vol3">Volume 3</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        </a>
+        <a href="assets/downloads/ous-voca-builder-vol4.pdf" class="voca-volume-pill" download>
+          <span class="voca-volume-swatch" style="background:#7ED37A;"></span>
+          <span data-i18n="programs.voca.vol4">Volume 4</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        </a>
       </div>
-      <div class="course-card" data-cat="guides">
-        <span class="course-level" data-i18n="books.cats.b2.tag">Guides</span>
-        <h3 data-i18n="books.cats.b2.title">Academic English</h3>
-        <p data-i18n="books.cats.b2.body">Essays, research writing, and university life.</p>
-        <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
-      </div>
-      <div class="course-card" data-cat="guides">
-        <span class="course-level" data-i18n="books.cats.b3.tag">Guides</span>
-        <h3 data-i18n="books.cats.b3.title">Travel & Everyday</h3>
-        <p data-i18n="books.cats.b3.body">The English you actually use day to day and while traveling.</p>
-        <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
-      </div>
-      <div class="course-card" data-cat="references">
-        <span class="course-level" data-i18n="books.cats.b4.tag">References</span>
-        <h3 data-i18n="books.cats.b4.title">Major References</h3>
-        <p data-i18n="books.cats.b4.body">Grammar, Writing, Vocabulary and Pronunciation — the core library.</p>
-        <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
-      </div>
+
+      <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="btn btn-primary" download data-i18n="programs.voca.cta">Download Free</a>
     </div>
   </div>
 </section>
 
 <section class="cta-banner">
   <div class="container">
-    <span class="eyebrow" data-reveal data-i18n="books.cta.eyebrow">Stay updated</span>
-    <h2 class="h-display h-lg on-dark" data-reveal style="margin-top:16px;" data-i18n="books.cta.title">Want to know when new books launch?</h2>
+    <span class="eyebrow" data-reveal data-i18n="books.cta.eyebrow">More titles on the way</span>
+    <h2 class="h-display h-lg on-dark" data-reveal style="margin-top:16px;" data-i18n="books.cta.title">Want to know the moment a new book or reference launches?</h2>
     <div class="btn-row" data-reveal>
-      <a href="contact.html" class="btn btn-on-dark" data-i18n="books.cta.primary">Join the Waitlist</a>
-      <a href="programs.html" class="btn btn-ghost-dark" data-i18n="books.cta.secondary">See All Programs</a>
+      <a href="contact.html" class="btn btn-on-dark" data-i18n="books.cta.primary">Get Notified</a>
+      <a href="programs.html" class="btn btn-ghost-dark" data-i18n="books.cta.secondary">See What Else Is Coming</a>
     </div>
   </div>
 </section>
@@ -200,16 +237,26 @@
         </ul>
       </div>
       <div class="footer-col">
+        <h4 data-i18n="footer.programs">Coming Soon</h4>
+        <ul>
+          <li><a href="programs.html#fluido" data-i18n="home.offers.o1.title">Fluido</a></li>
+          <li><a href="books.html#references" data-i18n="home.offers.o2.title">OUS References</a></li>
+          <li><a href="programs.html#test" data-i18n="home.offers.o4.title">OUS Test</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <h4 data-i18n="footer.contactHead">Get in touch</h4>
         <ul>
+          <li><a href="mailto:hello@ousacademy.com">hello@ousacademy.com</a></li>
           <li><a href="contact.html" data-i18n="footer.contactLink">Contact form</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p data-i18n="footer.rights">© <span data-year></span> OUS Academy. All rights reserved.</p>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/ousacademy47" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+      <span data-i18n="footer.rights">© 2026 OUS Academy. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="https://instagram.com/ousacademy47" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        <a href="https://facebook.com/ousacademy47" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
         <a href="https://www.threads.net/@ousacademy47" target="_blank" rel="noopener noreferrer" aria-label="Threads">TH</a>
         <a href="https://youtube.com/@ousacademy47" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
       </div>
@@ -217,41 +264,39 @@
   </div>
 </footer>
 
+<!-- ============ ANNOUNCEMENT MODAL (entry promo) ============ -->
+<div class="announce-overlay" id="announceOverlay" hidden>
+  <div class="announce-card" role="dialog" aria-modal="true" aria-labelledby="announceTitle" aria-describedby="announceDesc">
+    <button type="button" class="announce-close" id="announceClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="announce-visual" aria-hidden="true">
+      <div class="announce-fan">
+        <img src="assets/img/books/voca-builder-vol2.jpg" alt="">
+        <img src="assets/img/books/voca-builder-vol3.jpg" alt="">
+      </div>
+    </div>
+    <div class="announce-content">
+      <span class="badge-free">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <span data-i18n="announce.badge">Free — New Release</span>
+      </span>
+      <h3 id="announceTitle" class="h-display h-md" style="margin-top:16px;" data-i18n="announce.title">OUS Voca Builder is here — completely free.</h3>
+      <p id="announceDesc" class="lede" data-i18n="announce.body">Four volumes, 500 words each — 2,000 words total. A practical vocabulary workbook, not just a list. Built for levels A1–B2.</p>
+      <div class="announce-actions">
+        <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="btn btn-primary" id="announceDownload" download data-i18n="announce.download">Download Free</a>
+        <a href="books.html#voca-builder" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
+      </div>
+      <button type="button" class="announce-dismiss" id="announceDismiss" data-i18n="announce.dismiss">Maybe later</button>
+    </div>
+  </div>
+</div>
+
 <button type="button" class="back-to-top" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-// Simple client-side filter + search for books (ready for future expansion)
-document.addEventListener('DOMContentLoaded', () => {
-  const search = document.getElementById('bookSearch');
-  const filters = document.querySelectorAll('.books-filters .filter-btn');
-  const cards = document.querySelectorAll('.book-card, .course-card[data-cat]');
-  let activeFilter = 'all';
-
-  function apply() {
-    const q = (search?.value || '').toLowerCase().trim();
-    cards.forEach(card => {
-      const cats = (card.getAttribute('data-cat') || '').toLowerCase();
-      const text = card.textContent.toLowerCase();
-      const matchFilter = activeFilter === 'all' || cats.includes(activeFilter);
-      const matchSearch = !q || text.includes(q);
-      card.style.display = (matchFilter && matchSearch) ? '' : 'none';
-    });
-  }
-
-  filters.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filters.forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      activeFilter = btn.getAttribute('data-filter');
-      apply();
-    });
-  });
-  if (search) search.addEventListener('input', apply);
-});
-</script>
 </body>
 </html>

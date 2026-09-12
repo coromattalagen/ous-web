@@ -7,7 +7,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow">
 <title>Programs — OUS Academy</title>
-<meta name="description" content="Fluido, our interactive learning app. OUS Grammar, Writing, and Vocabulary references. Books and guides. OUS Test — a globally benchmarked English assessment. All coming soon.">
+<meta name="description" content="Fluido, our interactive learning app, and OUS Test — a globally benchmarked English assessment. See the full OUS toolkit and what's launching next.">
 <link rel="icon" href="assets/img/badge.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,17 @@
     <nav class="nav" aria-label="Primary">
       <a href="index.html" data-page="home" data-i18n="nav.home">Home</a>
       <a href="programs.html" data-page="programs" data-i18n="nav.programs">Programs</a>
-      <a href="books.html" data-page="books" data-i18n="nav.books">OUS Books</a>
+      <div class="nav-dropdown">
+        <a href="books.html" data-page="books" class="nav-dropdown-link" data-i18n="nav.books">OUS Books</a>
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Show OUS Books categories">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="books.html#references" data-i18n="nav.booksMenu.references">Major References</a>
+          <a href="books.html#guides" data-i18n="nav.booksMenu.guides">Guides &amp; Books</a>
+          <a href="books.html#voca-builder" data-i18n="nav.booksMenu.free">Free Library</a>
+        </div>
+      </div>
       <a href="articles.html" data-page="articles" data-i18n="nav.articles">Articles</a>
       <a href="about.html" data-page="about" data-i18n="nav.about">About</a>
       <a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a>
@@ -35,8 +45,6 @@
       <div class="lang-toggle" role="group" aria-label="Language">
         <button type="button" data-lang="en" class="is-active">EN</button>
         <button type="button" data-lang="ar">AR</button>
-        <button type="button" data-lang="tr">TR</button>
-        <button type="button" data-lang="id">ID</button>
       </div>
       <a href="contact.html" class="btn btn-on-dark" data-i18n="nav.cta">Join the Waitlist</a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -92,136 +100,6 @@
     </div>
   </div>
 </section>
-
-<hr class="rule">
-
-<!-- ============ OUS REFERENCES ============ -->
-<section class="section section-parchment" id="references">
-  <div class="container">
-    <div class="section-head center" data-reveal>
-      <span class="badge-soon on-light" style="margin-bottom:16px;"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
-      <h2 class="h-display h-lg" data-i18n="programs.refs.title">The OUS Reference Library.</h2>
-      <p class="lede" style="margin:16px auto 0;" data-i18n="programs.refs.sub">Major, authoritative references — the kind you keep coming back to, not the kind you finish once.</p>
-    </div>
-    <div class="ref-grid" data-reveal>
-      <div class="ref-card">
-        <h3 data-i18n="programs.refs.r1.title">OUS Grammar</h3>
-        <p data-i18n="programs.refs.r1.body">A complete, plain-language reference to how English actually works.</p>
-      </div>
-      <div class="ref-card">
-        <h3 data-i18n="programs.refs.r2.title">OUS Writing</h3>
-        <p data-i18n="programs.refs.r2.body">From a clear sentence to a polished email, essay, or report.</p>
-      </div>
-      <div class="ref-card">
-        <h3 data-i18n="programs.refs.r3.title">OUS Vocabulary</h3>
-        <p data-i18n="programs.refs.r3.body">Words organized the way your brain actually remembers them — by use, not alphabet.</p>
-      </div>
-      <div class="ref-card">
-        <h3 data-i18n="programs.refs.r4.title">OUS Pronunciation</h3>
-        <p data-i18n="programs.refs.r4.body">Sound, rhythm, and stress — the parts of English that textbooks usually skip.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BOOKS & GUIDES ============ -->
-<section class="section" id="books">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <span class="badge-soon on-light" style="margin-bottom:16px;"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
-      <h2 class="h-display h-lg" data-i18n="programs.books.title">Books and guides, for the English you actually need.</h2>
-      <p class="lede" style="margin-top:16px; max-width:none;" data-i18n="programs.books.sub">Focused guides across different fields and situations — not one generic textbook trying to cover everything.</p>
-    </div>
-    <div class="book-grid" data-reveal>
-      <div class="book-card">
-        <div class="book-cover"></div>
-        <h4 data-i18n="programs.books.b1.title">Business &amp; Career</h4>
-        <p data-i18n="programs.books.b1.body">Emails, meetings, interviews.</p>
-      </div>
-      <div class="book-card">
-        <div class="book-cover"></div>
-        <h4 data-i18n="programs.books.b2.title">Academic English</h4>
-        <p data-i18n="programs.books.b2.body">Essays, research, and university life.</p>
-      </div>
-      <div class="book-card">
-        <div class="book-cover"></div>
-        <h4 data-i18n="programs.books.b3.title">Travel &amp; Everyday Life</h4>
-        <p data-i18n="programs.books.b3.body">The English you'll actually use day to day.</p>
-      </div>
-      <div class="book-card">
-        <div class="book-cover"></div>
-        <h4 data-i18n="programs.books.b4.title">Specialized Fields</h4>
-        <p data-i18n="programs.books.b4.body">Medicine, tech, hospitality, and more.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FEATURED FREE RESOURCE: OUS VOCA BUILDER ============ -->
-<section class="section section-parchment" id="voca-builder">
-  <div class="container voca-showcase">
-    <div class="voca-fan" data-reveal>
-      <div class="voca-fan-item"><img src="assets/img/books/voca-builder-vol1.jpg" alt="OUS Voca Builder — Volume 1 cover" loading="lazy"></div>
-      <div class="voca-fan-item"><img src="assets/img/books/voca-builder-vol2.jpg" alt="OUS Voca Builder — Volume 2 cover" loading="lazy"></div>
-      <div class="voca-fan-item"><img src="assets/img/books/voca-builder-vol3.jpg" alt="OUS Voca Builder — Volume 3 cover" loading="lazy"></div>
-      <div class="voca-fan-item"><img src="assets/img/books/voca-builder-vol4.jpg" alt="OUS Voca Builder — Volume 4 cover" loading="lazy"></div>
-    </div>
-    <div data-reveal>
-      <span class="badge-free">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        <span data-i18n="programs.voca.badge">Free — Available Now</span>
-      </span>
-      <h2 class="h-display h-lg" style="margin-top:18px;" data-i18n="programs.voca.title">OUS Voca Builder — New Generation</h2>
-      <p class="lede" style="margin-top:14px; max-width:none;" data-i18n="programs.voca.body">A practical vocabulary workbook released in four volumes — 500 essential words per volume, 2,000 across the complete set. Built to be used, not just read.</p>
-
-      <ul class="voca-features">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          <span data-i18n="programs.voca.f1">500 words per volume — 2,000 across all four, organized by real-world use</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          <span data-i18n="programs.voca.f2">Workbook format with practical exercises, not just word lists</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          <span data-i18n="programs.voca.f3">Levels A1–B2 — built for real beginners through solid intermediate learners</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          <span data-i18n="programs.voca.f4">Completely free — no account, no catch</span>
-        </li>
-      </ul>
-
-      <div class="voca-volumes">
-        <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="voca-volume-pill" download>
-          <span class="voca-volume-swatch" style="background:#F2A649;"></span>
-          <span data-i18n="programs.voca.vol1">Volume 1</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-        </a>
-        <a href="assets/downloads/ous-voca-builder-vol2.pdf" class="voca-volume-pill" download>
-          <span class="voca-volume-swatch" style="background:#5FC9C0;"></span>
-          <span data-i18n="programs.voca.vol2">Volume 2</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-        </a>
-        <a href="assets/downloads/ous-voca-builder-vol3.pdf" class="voca-volume-pill" download>
-          <span class="voca-volume-swatch" style="background:#8B6BD6;"></span>
-          <span data-i18n="programs.voca.vol3">Volume 3</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-        </a>
-        <a href="assets/downloads/ous-voca-builder-vol4.pdf" class="voca-volume-pill" download>
-          <span class="voca-volume-swatch" style="background:#7ED37A;"></span>
-          <span data-i18n="programs.voca.vol4">Volume 4</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-        </a>
-      </div>
-
-      <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="btn btn-primary" download data-i18n="programs.voca.cta">Download Free</a>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
 
 <!-- ============ OUS TEST ============ -->
 <section class="section section-dark" id="test">
@@ -301,7 +179,7 @@
         <h4 data-i18n="footer.programs">Coming Soon</h4>
         <ul>
           <li><a href="programs.html#fluido" data-i18n="home.offers.o1.title">Fluido</a></li>
-          <li><a href="books.html#categories" data-i18n="home.offers.o2.title">OUS References</a></li>
+          <li><a href="books.html#references" data-i18n="home.offers.o2.title">OUS References</a></li>
           <li><a href="programs.html#test" data-i18n="home.offers.o4.title">OUS Test</a></li>
         </ul>
       </div>
@@ -346,7 +224,7 @@
       <p id="announceDesc" class="lede" data-i18n="announce.body">Four volumes, 500 words each — 2,000 words total. A practical vocabulary workbook, not just a list. Built for levels A1–B2.</p>
       <div class="announce-actions">
         <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="btn btn-primary" id="announceDownload" download data-i18n="announce.download">Download Free</a>
-        <a href="books.html#free-library" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
+        <a href="books.html#voca-builder" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
       </div>
       <button type="button" class="announce-dismiss" id="announceDismiss" data-i18n="announce.dismiss">Maybe later</button>
     </div>

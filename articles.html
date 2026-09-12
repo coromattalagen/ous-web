@@ -25,7 +25,17 @@
     <nav class="nav" aria-label="Primary">
       <a href="index.html" data-page="home" data-i18n="nav.home">Home</a>
       <a href="programs.html" data-page="programs" data-i18n="nav.programs">Programs</a>
-      <a href="books.html" data-page="books" data-i18n="nav.books">OUS Books</a>
+      <div class="nav-dropdown">
+        <a href="books.html" data-page="books" class="nav-dropdown-link" data-i18n="nav.books">OUS Books</a>
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Show OUS Books categories">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="books.html#references" data-i18n="nav.booksMenu.references">Major References</a>
+          <a href="books.html#guides" data-i18n="nav.booksMenu.guides">Guides &amp; Books</a>
+          <a href="books.html#voca-builder" data-i18n="nav.booksMenu.free">Free Library</a>
+        </div>
+      </div>
       <a href="articles.html" data-page="articles" data-i18n="nav.articles">Articles</a>
       <a href="about.html" data-page="about" data-i18n="nav.about">About</a>
       <a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a>
@@ -35,8 +45,6 @@
       <div class="lang-toggle" role="group" aria-label="Language">
         <button type="button" data-lang="en" class="is-active">EN</button>
         <button type="button" data-lang="ar">AR</button>
-        <button type="button" data-lang="tr">TR</button>
-        <button type="button" data-lang="id">ID</button>
       </div>
       <a href="contact.html" class="btn btn-on-dark" data-i18n="nav.cta">Join the Waitlist</a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -65,9 +73,9 @@
       <button class="filter-btn" data-filter="culture" data-i18n="articles.filters.culture">Culture &amp; Language</button>
     </div>
 
-        <div class="article-grid" data-reveal>
+    <div class="article-grid" data-reveal>
 
-      <a href="articles/common-grammar-mistakes.html" class="article-card" data-course-cat="grammar" style="text-decoration:none;color:inherit;">
+      <a href="article-common-mistakes.html" class="article-card" data-course-cat="grammar" style="text-decoration:none;">
         <div class="article-media">
           <span class="course-level" data-i18n="articles.a1.tag">Grammar</span>
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
@@ -75,11 +83,11 @@
         <div class="article-body">
           <h3 data-i18n="articles.a1.title">Common Mistakes Even Advanced Learners Still Make</h3>
           <p data-i18n="articles.a1.body">The small grammar slips that persist long after the basics are mastered — and why they happen.</p>
-          <span style="font-size:13px;color:var(--brass);font-weight:600;">8 min read →</span>
+          <span class="course-link" data-i18n="articles.read">Read article <span class="btn-arrow">→</span></span>
         </div>
       </a>
 
-      <a href="articles/remember-new-words.html" class="article-card" data-course-cat="vocabulary" style="text-decoration:none;color:inherit;">
+      <a href="article-remember-words.html" class="article-card" data-course-cat="vocabulary" style="text-decoration:none;">
         <div class="article-media">
           <span class="course-level" data-i18n="articles.a2.tag">Vocabulary</span>
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
@@ -87,57 +95,57 @@
         <div class="article-body">
           <h3 data-i18n="articles.a2.title">How to Actually Remember New Words</h3>
           <p data-i18n="articles.a2.body">Why word lists alone don't work, and what the research says actually makes vocabulary stick.</p>
-          <span style="font-size:13px;color:var(--brass);font-weight:600;">9 min read →</span>
+          <span class="course-link" data-i18n="articles.read">Read article <span class="btn-arrow">→</span></span>
         </div>
       </a>
 
-      <a href="articles/daily-english-habit.html" class="article-card" data-course-cat="study" style="text-decoration:none;color:inherit;">
+      <a href="article-daily-habit.html" class="article-card" data-course-cat="study" style="text-decoration:none;">
         <div class="article-media">
           <span class="course-level" data-i18n="articles.a3.tag">Study Habits</span>
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
         </div>
         <div class="article-body">
-          <h3 data-i18n="articles.a3.title">Building a Daily English Habit That Actually Lasts</h3>
-          <p data-i18n="articles.a3.body">Ten minutes a day done consistently beats an hour done once a week. Here's how to make it automatic.</p>
-          <span style="font-size:13px;color:var(--brass);font-weight:600;">8 min read →</span>
+          <h3 data-i18n="articles.a3.title">Building a Daily English Habit That Actually Sticks</h3>
+          <p data-i18n="articles.a3.body">Ten minutes a day, done consistently, beats an hour once a week. Here's how to make it automatic.</p>
+          <span class="course-link" data-i18n="articles.read">Read article <span class="btn-arrow">→</span></span>
         </div>
       </a>
 
-      <a href="articles/ielts-vs-toefl.html" class="article-card" data-course-cat="exam" style="text-decoration:none;color:inherit;">
+      <a href="article-ielts-toefl.html" class="article-card" data-course-cat="exam" style="text-decoration:none;">
         <div class="article-media">
           <span class="course-level" data-i18n="articles.a4.tag">Exam Prep</span>
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><path d="M4 19V6a2 2 0 0 1 2-2h12v14H6a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12"/></svg>
         </div>
         <div class="article-body">
-          <h3 data-i18n="articles.a4.title">IELTS vs TOEFL: Which One Actually Fits You?</h3>
-          <p data-i18n="articles.a4.body">The real differences that matter for your goals — not just the shape of the test on paper.</p>
-          <span style="font-size:13px;color:var(--brass);font-weight:600;">10 min read →</span>
+          <h3 data-i18n="articles.a4.title">IELTS vs. TOEFL: Which Test Actually Fits You?</h3>
+          <p data-i18n="articles.a4.body">The real differences that matter for your goals — not just the format on paper.</p>
+          <span class="course-link" data-i18n="articles.read">Read article <span class="btn-arrow">→</span></span>
         </div>
       </a>
 
-      <article class="article-card" data-course-cat="culture">
+      <a href="article-idioms.html" class="article-card" data-course-cat="culture" style="text-decoration:none;">
         <div class="article-media">
-          <span class="course-level" data-i18n="articles.a5.tag">Culture & Language</span>
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><path d="M12 2a5 5 0 015 5c0 3-5 9-5 9s-5-6-5-9a5 5 0 015-5z"/><circle cx="12" cy="7" r="1.5"/></svg>
+          <span class="course-level" data-i18n="articles.a5.tag">Culture &amp; Language</span>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><path d="M12 3l8 4-8 4-8-4 8-4Zm-8 8l8 4 8-4M4 15v4M20 11v6"/></svg>
         </div>
         <div class="article-body">
-          <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
-          <h3 data-i18n="articles.a5.title">Idioms That Don't Translate — and What They Really Mean</h3>
+          <h3 data-i18n="articles.a5.title">Idioms That Don't Translate — And What They Really Mean</h3>
           <p data-i18n="articles.a5.body">Why "it's raining cats and dogs" makes no sense literally, and how to stop translating word-for-word.</p>
+          <span class="course-link" data-i18n="articles.read">Read article <span class="btn-arrow">→</span></span>
         </div>
-      </article>
+      </a>
 
-      <article class="article-card" data-course-cat="study">
+      <a href="article-institutions.html" class="article-card" data-course-cat="study" style="text-decoration:none;">
         <div class="article-media">
           <span class="course-level" data-i18n="articles.a6.tag">For Institutions</span>
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F3EBD6" stroke-width="1.1"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 10h16M10 10v10"/></svg>
         </div>
         <div class="article-body">
-          <span class="badge-soon on-light"><span class="dot"></span><span data-i18n="common.comingSoon">Coming Soon</span></span>
           <h3 data-i18n="articles.a6.title">Bringing Structured English Programs to Your Campus</h3>
           <p data-i18n="articles.a6.body">What universities and institutes should look for before adopting any English program at scale.</p>
+          <span class="course-link" data-i18n="articles.read">Read article <span class="btn-arrow">→</span></span>
         </div>
-      </article>
+      </a>
 
     </div>
   </div>
@@ -175,7 +183,7 @@
         <h4 data-i18n="footer.programs">Coming Soon</h4>
         <ul>
           <li><a href="programs.html#fluido" data-i18n="home.offers.o1.title">Fluido</a></li>
-          <li><a href="books.html#categories" data-i18n="home.offers.o2.title">OUS References</a></li>
+          <li><a href="books.html#references" data-i18n="home.offers.o2.title">OUS References</a></li>
           <li><a href="programs.html#test" data-i18n="home.offers.o4.title">OUS Test</a></li>
         </ul>
       </div>
@@ -220,7 +228,7 @@
       <p id="announceDesc" class="lede" data-i18n="announce.body">Four volumes, 500 words each — 2,000 words total. A practical vocabulary workbook, not just a list. Built for levels A1–B2.</p>
       <div class="announce-actions">
         <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="btn btn-primary" id="announceDownload" download data-i18n="announce.download">Download Free</a>
-        <a href="books.html#free-library" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
+        <a href="books.html#voca-builder" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
       </div>
       <button type="button" class="announce-dismiss" id="announceDismiss" data-i18n="announce.dismiss">Maybe later</button>
     </div>
@@ -233,21 +241,5 @@
 
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
-
-<script>
-document.addEventListener('ous:lang-applied', function(e) {
-  const lang = e.detail.lang;
-  document.querySelectorAll('a.article-card[href*="articles/"]').forEach(a => {
-    const href = a.getAttribute('href');
-    // Keep English as base; for other langs try /ar/ /tr/ /id/ if we expand later
-    if (lang === 'ar' && href.includes('common-grammar-mistakes')) {
-      a.setAttribute('href', 'articles/ar/common-grammar-mistakes.html');
-    } else if (lang === 'en') {
-      a.setAttribute('href', href.replace(/articles\/(ar|tr|id)\//, 'articles/'));
-    }
-  });
-});
-</script>
-
 </body>
 </html>

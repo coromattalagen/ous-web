@@ -25,7 +25,17 @@
     <nav class="nav" aria-label="Primary">
       <a href="index.html" data-page="home" data-i18n="nav.home">Home</a>
       <a href="programs.html" data-page="programs" data-i18n="nav.programs">Programs</a>
-      <a href="books.html" data-page="books" data-i18n="nav.books">OUS Books</a>
+      <div class="nav-dropdown">
+        <a href="books.html" data-page="books" class="nav-dropdown-link" data-i18n="nav.books">OUS Books</a>
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Show OUS Books categories">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="books.html#references" data-i18n="nav.booksMenu.references">Major References</a>
+          <a href="books.html#guides" data-i18n="nav.booksMenu.guides">Guides &amp; Books</a>
+          <a href="books.html#voca-builder" data-i18n="nav.booksMenu.free">Free Library</a>
+        </div>
+      </div>
       <a href="articles.html" data-page="articles" data-i18n="nav.articles">Articles</a>
       <a href="about.html" data-page="about" data-i18n="nav.about">About</a>
       <a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a>
@@ -35,8 +45,6 @@
       <div class="lang-toggle" role="group" aria-label="Language">
         <button type="button" data-lang="en" class="is-active">EN</button>
         <button type="button" data-lang="ar">AR</button>
-        <button type="button" data-lang="tr">TR</button>
-        <button type="button" data-lang="id">ID</button>
       </div>
       <a href="contact.html" class="btn btn-on-dark" data-i18n="nav.cta">Join the Waitlist</a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -188,7 +196,7 @@
         <h4 data-i18n="footer.programs">Coming Soon</h4>
         <ul>
           <li><a href="programs.html#fluido" data-i18n="home.offers.o1.title">Fluido</a></li>
-          <li><a href="books.html#categories" data-i18n="home.offers.o2.title">OUS References</a></li>
+          <li><a href="books.html#references" data-i18n="home.offers.o2.title">OUS References</a></li>
           <li><a href="programs.html#test" data-i18n="home.offers.o4.title">OUS Test</a></li>
         </ul>
       </div>
@@ -233,7 +241,7 @@
       <p id="announceDesc" class="lede" data-i18n="announce.body">Four volumes, 500 words each — 2,000 words total. A practical vocabulary workbook, not just a list. Built for levels A1–B2.</p>
       <div class="announce-actions">
         <a href="assets/downloads/ous-voca-builder-vol1.pdf" class="btn btn-primary" id="announceDownload" download data-i18n="announce.download">Download Free</a>
-        <a href="books.html#free-library" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
+        <a href="books.html#voca-builder" class="btn btn-ghost" id="announceExplore" data-i18n="announce.explore">Explore All Volumes</a>
       </div>
       <button type="button" class="announce-dismiss" id="announceDismiss" data-i18n="announce.dismiss">Maybe later</button>
     </div>
