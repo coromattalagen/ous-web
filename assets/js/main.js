@@ -3,40 +3,66 @@
 // =========================================================
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---- header scroll state ---- */
+  /* ---- smart header: hide on scroll down, reveal on scroll up ---- */
   const header = document.querySelector('.site-header');
+  const ribbon = document.querySelector('.honor-ribbon');
+  const nav = document.querySelector('.nav');
   if (header) {
-    const onScroll = () => {
-      header.classList.toggle('is-scrolled', window.scrollY > 40);
+    let lastY = window.scrollY;
+    let ticking = false;
+    const revealThreshold = 12;     // ignore tiny scroll jitter
+    const armDistance = header.offsetHeight + (ribbon ? ribbon.offsetHeight : 0) + 40; // don't hide until scrolled past the header's own height
+
+    const setHidden = (hidden) => {
+      header.classList.toggle('is-hidden', hidden);
+      if (ribbon) ribbon.classList.toggle('is-hidden', hidden);
     };
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      header.classList.toggle('is-scrolled', y > 40);
+
+      const navOpen = nav && nav.classList.contains('is-open');
+      const dropdownOpen = document.querySelector('.nav-dropdown.is-open');
+      if (navOpen || dropdownOpen) { setHidden(false); lastY = y; ticking = false; return; }
+
+      if (y <= armDistance) {
+        setHidden(false);
+      } else if (y > lastY + revealThreshold) {
+        setHidden(true);
+      } else if (y < lastY - revealThreshold) {
+        setHidden(false);
+      }
+      lastY = y;
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* ---- mobile nav (professional full-screen overlay) ---- */
+  /* ---- mobile nav ---- */
   const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
   if (navToggle && nav) {
-    const closeMobileNav = () => {
-      nav.classList.remove('is-open');
-      navToggle.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('nav-open');
-    };
-    const openMobileNav = () => {
-      nav.classList.add('is-open');
-      navToggle.classList.add('is-open');
-      navToggle.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('nav-open');
-    };
     navToggle.addEventListener('click', () => {
-      if (nav.classList.contains('is-open')) closeMobileNav();
-      else openMobileNav();
+      const open = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        nav.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:0;inset-inline:0;bottom:0;background:#1B1A18;padding:120px 40px 40px;gap:28px;z-index:99;';
+      } else {
+        nav.style.cssText = '';
+      }
     });
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && nav.classList.contains('is-open')) closeMobileNav();
-    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      nav.style.cssText = '';
+    }));
   }
 
   /* ---- nav dropdown (e.g. OUS Books) ---- */
@@ -123,6 +149,43 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* (decorative wolf-pack horizon line removed) */
+
+  /* ---- book catalog: search + category filter combined (books.html) ---- */
+  const bookSearch = document.getElementById('bookSearch');
+  const catalogItems = document.querySelectorAll('.catalog-item');
+  const catalogFilters = document.querySelectorAll('.catalog-filters .filter-btn');
+  const catalogEmpty = document.getElementById('catalogEmpty');
+  if (bookSearch && catalogItems.length) {
+    let activeCat = 'all';
+
+    const applyCatalogFilter = () => {
+      const query = bookSearch.value.trim().toLowerCase();
+      let visibleCount = 0;
+      catalogItems.forEach(item => {
+        const cat = item.getAttribute('data-cat');
+        const name = (item.getAttribute('data-name') || item.textContent || '').toLowerCase();
+        const matchesCat = activeCat === 'all' || cat === activeCat;
+        const matchesQuery = query === '' || name.includes(query);
+        const visible = matchesCat && matchesQuery;
+        item.style.display = visible ? '' : 'none';
+        if (visible) visibleCount++;
+      });
+      if (catalogEmpty) catalogEmpty.hidden = visibleCount !== 0;
+    };
+
+    bookSearch.addEventListener('input', applyCatalogFilter);
+
+    catalogFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catalogFilters.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        activeCat = btn.getAttribute('data-filter');
+        applyCatalogFilter();
+      });
+    });
+
+    applyCatalogFilter();
+  }
 
   /* ---- course filter tabs ---- */
   const filterBtns = document.querySelectorAll('.filter-btn');
